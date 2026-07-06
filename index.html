@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GNG Fitness Member Hub Prototype</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <nav class="navbar container">
+        <a class="brand" href="#home" aria-label="GNG Fitness Home">
+          <span class="brand-mark">G</span>
+          <span>
+            <strong>GNG Fitness</strong>
+            <small>Member Hub</small>
+          </span>
+        </a>
+
+        <input type="checkbox" id="menu-toggle" class="menu-toggle" />
+        <label for="menu-toggle" class="menu-button" aria-label="Open menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </label>
+
+        <div class="nav-links">
+          <a href="#plans">Plans</a>
+          <a href="#trainers">Trainers</a>
+          <a href="#booking">Booking</a>
+          <a href="#dashboard">Dashboard</a>
+          <a href="#contact" class="nav-cta">Join Now</a>
+        </div>
+      </nav>
+    </header>
+
+    <main id="home">
+      <section class="hero-section container">
+        <div class="hero-content">
+          <p class="eyebrow">Fitness Website + Member Management System</p>
+          <h1>Train harder. Manage members smarter.</h1>
+          <p class="hero-description">
+            A mobile-first gym website prototype built for local gyms that want online inquiries,
+            membership tracking, QR check-ins, trainer booking, and promo management in one clean system.
+          </p>
+
+          <div class="hero-actions">
+            <a href="#contact" class="btn btn-primary">Start Membership</a>
+            <a href="#plans" class="btn btn-secondary">View Plans</a>
+          </div>
+
+          <div class="hero-stats" aria-label="Gym highlights">
+            <div>
+              <strong>500+</strong>
+              <span>Active Members</span>
+            </div>
+            <div>
+              <strong>6</strong>
+              <span>Certified Coaches</span>
+            </div>
+            <div>
+              <strong>24/7</strong>
+              <span>Online Inquiry</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-visual" aria-label="Member dashboard preview">
+          <div class="phone-card">
+            <div class="phone-topbar">
+              <span></span>
+              <span></span>
+            </div>
+            <div class="member-card">
+              <div>
+                <p>Membership Status</p>
+                <h3>Active Premium</h3>
+              </div>
+              <span class="status-pill">18 days left</span>
+            </div>
+            <div class="qr-card">
+              <div class="fake-qr" aria-hidden="true">
+                <span></span><span></span><span></span><span></span>
+                <span></span><span></span><span></span><span></span>
+                <span></span><span></span><span></span><span></span>
+                <span></span><span></span><span></span><span></span>
+              </div>
+              <div>
+                <h4>QR Check-In</h4>
+                <p>Scan at the front desk to record attendance.</p>
+              </div>
+            </div>
+            <div class="mini-grid">
+              <div>
+                <strong>12</strong>
+                <span>Visits</span>
+              </div>
+              <div>
+                <strong>3</strong>
+                <span>Bookings</span>
+              </div>
+            </div>
+            <div class="progress-card">
+              <div class="progress-info">
+                <span>Monthly Goal</span>
+                <strong>75%</strong>
+              </div>
+              <div class="progress-bar"><span></span></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section feature-section container">
+        <div class="section-heading">
+          <p class="eyebrow">Core Features</p>
+          <h2>Everything a local gym needs to get more members and reduce manual work.</h2>
+        </div>
+
+        <div class="feature-grid">
+          <article class="feature-card">
+            <div class="icon-box">01</div>
+            <h3>Online Membership Inquiry</h3>
+            <p>Collect leads from interested members with name, contact number, preferred plan, and fitness goal.</p>
+          </article>
+          <article class="feature-card">
+            <div class="icon-box">02</div>
+            <h3>Membership Plans</h3>
+            <p>Show daily, monthly, student, premium, and personal training packages in a clear pricing section.</p>
+          </article>
+          <article class="feature-card">
+            <div class="icon-box">03</div>
+            <h3>QR Check-In</h3>
+            <p>Let members scan their QR code at the front desk so attendance is recorded automatically.</p>
+          </article>
+          <article class="feature-card">
+            <div class="icon-box">04</div>
+            <h3>Trainer Booking</h3>
+            <p>Allow members to book personal training, boxing, strength coaching, or body transformation consultations.</p>
+          </article>
+          <article class="feature-card">
+            <div class="icon-box">05</div>
+            <h3>Renewal Reminders</h3>
+            <p>Track membership expiry dates and remind members before their plan ends.</p>
+          </article>
+          <article class="feature-card">
+            <div class="icon-box">06</div>
+            <h3>Admin Dashboard</h3>
+            <p>Manage inquiries, active members, check-ins, trainers, promos, and basic reports from one dashboard.</p>
+          </article>
+        </div>
+      </section>
+
+      <section id="plans" class="section pricing-section">
+        <div class="container">
+          <div class="section-heading center">
+            <p class="eyebrow">Membership Plans</p>
+            <h2>Simple pricing that answers the first question every new member asks.</h2>
+          </div>
+
+          <div class="pricing-grid">
+            <article class="pricing-card">
+              <p class="plan-label">Starter</p>
+              <h3>Daily Pass</h3>
+              <div class="price">₱80<span>/day</span></div>
+              <ul>
+                <li>Gym access for one day</li>
+                <li>Beginner-friendly equipment</li>
+                <li>Walk-in registration</li>
+              </ul>
+              <a href="#contact" class="btn btn-outline">Choose Plan</a>
+            </article>
+
+            <article class="pricing-card featured-plan">
+              <p class="plan-label">Most Popular</p>
+              <h3>Monthly Access</h3>
+              <div class="price">₱800<span>/month</span></div>
+              <ul>
+                <li>Unlimited gym access</li>
+                <li>QR attendance check-in</li>
+                <li>Membership expiry reminder</li>
+              </ul>
+              <a href="#contact" class="btn btn-primary">Choose Plan</a>
+            </article>
+
+            <article class="pricing-card">
+              <p class="plan-label">Coaching</p>
+              <h3>Personal Training</h3>
+              <div class="price">Custom<span>/package</span></div>
+              <ul>
+                <li>One-on-one coaching</li>
+                <li>Workout program guidance</li>
+                <li>Progress monitoring</li>
+              </ul>
+              <a href="#booking" class="btn btn-outline">Book Coach</a>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="trainers" class="section container">
+        <div class="section-heading split">
+          <div>
+            <p class="eyebrow">Coaches</p>
+            <h2>Trainer profiles that help members trust the gym before they visit.</h2>
+          </div>
+          <a href="#booking" class="btn btn-secondary">Book a Session</a>
+        </div>
+
+        <div class="trainer-grid">
+          <article class="trainer-card">
+            <div class="trainer-photo trainer-1"></div>
+            <div class="trainer-content">
+              <span>Strength Training</span>
+              <h3>Coach Adrian</h3>
+              <p>Helps beginners build proper form, strength, and confidence inside the gym.</p>
+            </div>
+          </article>
+          <article class="trainer-card">
+            <div class="trainer-photo trainer-2"></div>
+            <div class="trainer-content">
+              <span>Weight Loss</span>
+              <h3>Coach Mika</h3>
+              <p>Focuses on fat loss programs, habit building, and realistic body transformation plans.</p>
+            </div>
+          </article>
+          <article class="trainer-card">
+            <div class="trainer-photo trainer-3"></div>
+            <div class="trainer-content">
+              <span>Boxing & Conditioning</span>
+              <h3>Coach Ramon</h3>
+              <p>Runs boxing drills, conditioning sessions, and high-energy cardio training.</p>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section id="booking" class="section booking-section">
+        <div class="container booking-layout">
+          <div>
+            <p class="eyebrow">Booking</p>
+            <h2>Let members reserve coaching sessions without messaging repeatedly.</h2>
+            <p class="section-copy">
+              This booking preview is designed for personal training, boxing, beginner assessments,
+              and transformation consultations. In the real version, this can connect to a database or calendar.
+            </p>
+            <div class="booking-tags">
+              <span>Personal Training</span>
+              <span>Boxing</span>
+              <span>Beginner Assessment</span>
+              <span>Body Transformation</span>
+            </div>
+          </div>
+
+          <form class="booking-form">
+            <label>
+              Full Name
+              <input type="text" placeholder="Juan Dela Cruz" />
+            </label>
+            <label>
+              Preferred Session
+              <select>
+                <option>Personal Training</option>
+                <option>Boxing</option>
+                <option>Strength Training</option>
+                <option>Beginner Consultation</option>
+              </select>
+            </label>
+            <label>
+              Preferred Date
+              <input type="date" />
+            </label>
+            <label>
+              Contact Number
+              <input type="tel" placeholder="09XX XXX XXXX" />
+            </label>
+            <button type="button" class="btn btn-primary full-width">Send Booking Request</button>
+          </form>
+        </div>
+      </section>
+
+      <section id="dashboard" class="section container dashboard-section">
+        <div class="section-heading center">
+          <p class="eyebrow">Admin + Member Dashboard</p>
+          <h2>The feature that turns the website into a real gym business system.</h2>
+        </div>
+
+        <div class="dashboard-shell">
+          <aside class="sidebar-preview">
+            <div class="sidebar-logo">G</div>
+            <a class="active" href="#dashboard">Overview</a>
+            <a href="#dashboard">Members</a>
+            <a href="#dashboard">Check-ins</a>
+            <a href="#dashboard">Bookings</a>
+            <a href="#dashboard">Promos</a>
+          </aside>
+
+          <div class="dashboard-main">
+            <div class="dashboard-topline">
+              <div>
+                <span>Today</span>
+                <h3>Gym Operations</h3>
+              </div>
+              <button type="button">Export Report</button>
+            </div>
+
+            <div class="metric-grid">
+              <article>
+                <span>Active Members</span>
+                <strong>512</strong>
+                <small>+28 this month</small>
+              </article>
+              <article>
+                <span>Today’s Check-ins</span>
+                <strong>86</strong>
+                <small>Peak: 6PM - 8PM</small>
+              </article>
+              <article>
+                <span>Expiring Soon</span>
+                <strong>37</strong>
+                <small>Need renewal reminders</small>
+              </article>
+            </div>
+
+            <div class="table-card">
+              <div class="table-header">
+                <h4>Recent Members</h4>
+                <span>Live preview</span>
+              </div>
+              <div class="member-row">
+                <span class="avatar">JD</span>
+                <div>
+                  <strong>Juan Dela Cruz</strong>
+                  <p>Monthly Access · expires in 18 days</p>
+                </div>
+                <span class="badge success">Checked in</span>
+              </div>
+              <div class="member-row">
+                <span class="avatar">MR</span>
+                <div>
+                  <strong>Mika Reyes</strong>
+                  <p>Personal Training · booking tomorrow</p>
+                </div>
+                <span class="badge warning">Booked</span>
+              </div>
+              <div class="member-row">
+                <span class="avatar">AL</span>
+                <div>
+                  <strong>Arvin Lopez</strong>
+                  <p>Monthly Access · expires in 2 days</p>
+                </div>
+                <span class="badge danger">Renewal</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section promo-section">
+        <div class="container promo-card">
+          <div>
+            <p class="eyebrow">Promo System</p>
+            <h2>Referral promos can turn members into your sales team.</h2>
+            <p>
+              Add campaigns like student discount, bring-a-friend, transformation challenge,
+              or anniversary promo. The gym can update promos from the admin dashboard later.
+            </p>
+          </div>
+          <div class="promo-box">
+            <span>Limited Promo</span>
+            <strong>Refer 1 friend, get 3 extra gym days.</strong>
+            <a href="#contact">Claim Promo →</a>
+          </div>
+        </div>
+      </section>
+
+      <section id="contact" class="section contact-section container">
+        <div class="contact-card">
+          <div>
+            <p class="eyebrow">Join Now</p>
+            <h2>Start with an inquiry form that turns visitors into leads.</h2>
+            <p>
+              This form can send submissions to email, Google Sheets, Supabase, Laravel, or a custom admin dashboard.
+            </p>
+
+            <div class="contact-details">
+              <p><strong>Location:</strong> Teresa / Antipolo / Rizal Branch</p>
+              <p><strong>Open:</strong> Monday to Sunday, 6:00 AM - 10:00 PM</p>
+              <p><strong>Contact:</strong> 09XX XXX XXXX</p>
+            </div>
+          </div>
+
+          <form class="inquiry-form">
+            <label>
+              Full Name
+              <input type="text" placeholder="Enter your name" />
+            </label>
+            <label>
+              Mobile Number
+              <input type="tel" placeholder="09XX XXX XXXX" />
+            </label>
+            <label>
+              Fitness Goal
+              <select>
+                <option>Build muscle</option>
+                <option>Lose weight</option>
+                <option>Get stronger</option>
+                <option>Start as beginner</option>
+              </select>
+            </label>
+            <label>
+              Message
+              <textarea rows="4" placeholder="Tell us what plan you are interested in"></textarea>
+            </label>
+            <button type="button" class="btn btn-primary full-width">Submit Inquiry</button>
+          </form>
+        </div>
+      </section>
+
+      <section class="section faq-section container">
+        <div class="section-heading center">
+          <p class="eyebrow">FAQ</p>
+          <h2>Common questions answered before customers message the gym.</h2>
+        </div>
+
+        <div class="faq-grid">
+          <details open>
+            <summary>Do you accept beginners?</summary>
+            <p>Yes. The gym can offer beginner assessment and trainer guidance for first-time members.</p>
+          </details>
+          <details>
+            <summary>Can members pay through GCash?</summary>
+            <p>The prototype includes payment proof upload as a future feature. Online payment can be added later.</p>
+          </details>
+          <details>
+            <summary>How does QR check-in work?</summary>
+            <p>Each member gets a unique QR code. Staff scans it to record attendance and membership status.</p>
+          </details>
+          <details>
+            <summary>Can this become a mobile app?</summary>
+            <p>Yes. The same system can later be converted into a React Native or Flutter mobile app.</p>
+          </details>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-content">
+        <p>© 2026 GNG Fitness Member Hub Prototype. Built for gym website presentation.</p>
+        <a href="#home">Back to top ↑</a>
+      </div>
+    </footer>
+  </body>
+</html>
