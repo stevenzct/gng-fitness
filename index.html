@@ -7,24 +7,19 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Oswald:wght@500;600;700&display=swap" rel="stylesheet" />
+    <script src="https://code.iconify.design/iconify-icon/3.0.0/iconify-icon.min.js" defer></script>
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
     <header class="site-header">
       <nav class="navbar container">
         <a class="brand" href="#home" aria-label="GNG Fitness Home">
-          <span class="brand-mark">G</span>
-          <span>
-            <strong>GNG Fitness</strong>
-            <small>Member Hub</small>
-          </span>
+          <img class="brand-logo" src="assets/gng-logo.svg" alt="GNG Fitness" />
         </a>
 
         <input type="checkbox" id="menu-toggle" class="menu-toggle" />
         <label for="menu-toggle" class="menu-button" aria-label="Open menu">
-          <span></span>
-          <span></span>
-          <span></span>
+          <iconify-icon icon="lucide:menu" aria-hidden="true"></iconify-icon>
         </label>
 
         <div class="nav-links">
@@ -32,7 +27,7 @@
           <a href="#trainers">Trainers</a>
           <a href="#booking">Booking</a>
           <a href="#dashboard">Dashboard</a>
-          <a href="#contact" class="nav-cta">Join Now</a>
+          <a href="#contact" class="nav-cta">Join Now <iconify-icon icon="lucide:arrow-up-right" aria-hidden="true"></iconify-icon></a>
         </div>
       </nav>
     </header>
@@ -40,42 +35,46 @@
     <main id="home">
       <section class="hero-section container">
         <div class="hero-content">
-          <p class="eyebrow">GNG Fitness · Rizal</p>
-          <h1>Your fitness journey starts here.</h1>
+          <p class="eyebrow">Your Strongest Self Starts Here</p>
+          <h1>Built for <em>strength</em> <span>Made for you</span></h1>
           <p class="hero-description">
-            Real coaching, smart membership tools, and a community that keeps you moving—whatever your starting point.
+            Premium coaching, top-tier equipment, and a community that pushes you to be your best—inside and out.
           </p>
 
           <div class="hero-actions">
-            <a href="#plans" class="btn btn-primary">Explore plans <span aria-hidden="true">↗</span></a>
-            <a href="#trainers" class="btn btn-secondary">Meet the coaches</a>
+            <a href="#plans" class="btn btn-primary">Explore plans <iconify-icon icon="lucide:arrow-up-right" aria-hidden="true"></iconify-icon></a>
+            <a href="#booking" class="btn btn-secondary"><iconify-icon icon="lucide:calendar-check-2" aria-hidden="true"></iconify-icon> Book a trial</a>
           </div>
 
-          <div class="hero-stats" aria-label="Gym highlights">
-            <div>
-              <strong>500<span>+</span></strong>
-              <span>Active members</span>
-            </div>
-            <div>
-              <strong>6</strong>
-              <span>Certified coaches</span>
-            </div>
-            <div>
-              <strong>24/7</strong>
-              <span>Member access</span>
-            </div>
+          <div class="hero-pillars" aria-label="Why train at GNG Fitness">
+            <article>
+              <span aria-hidden="true"><iconify-icon icon="lucide:dumbbell"></iconify-icon></span>
+              <div><strong>Premium equipment</strong><small>Train with the right tools for every goal.</small></div>
+            </article>
+            <article>
+              <span aria-hidden="true"><iconify-icon icon="lucide:badge-check"></iconify-icon></span>
+              <div><strong>Expert coaches</strong><small>Certified guidance. Real results.</small></div>
+            </article>
+            <article>
+              <span aria-hidden="true"><iconify-icon icon="lucide:users-round"></iconify-icon></span>
+              <div><strong>Strong community</strong><small>Support, motivation, accountability.</small></div>
+            </article>
           </div>
+
         </div>
 
-        <div class="hero-visual" aria-label="Membership highlight">
-          <div class="hero-float-card">
-            <span class="pulse-dot"></span>
-            <div>
-              <small>Today at GNG</small>
-              <strong>86 members checked in</strong>
-            </div>
-            <a href="#dashboard" aria-label="View member dashboard">↗</a>
-          </div>
+        <div class="hero-visual" aria-label="Inside GNG Fitness">
+          <img class="hero-gym-image" src="assets/gng-gym-hero.png" alt="GNG Fitness gym interior" />
+
+          <figure class="community-card">
+            <img src="assets/gng-community.png" alt="GNG Fitness coaches and community members" />
+            <figcaption>
+              <span aria-hidden="true">“</span>
+              <p>More than a gym. It’s a family that shows up for you.</p>
+              <small>— GNG Community</small>
+            </figcaption>
+          </figure>
+
         </div>
       </section>
 
@@ -87,32 +86,32 @@
 
         <div class="feature-grid">
           <article class="feature-card">
-            <div class="icon-box">01</div>
+            <div class="icon-box"><iconify-icon icon="lucide:clipboard-pen-line" aria-hidden="true"></iconify-icon><span>01</span></div>
             <h3>Online Membership Inquiry</h3>
             <p>Collect leads from interested members with name, contact number, preferred plan, and fitness goal.</p>
           </article>
           <article class="feature-card">
-            <div class="icon-box">02</div>
+            <div class="icon-box"><iconify-icon icon="lucide:badge-dollar-sign" aria-hidden="true"></iconify-icon><span>02</span></div>
             <h3>Membership Plans</h3>
             <p>Show daily, monthly, student, premium, and personal training packages in a clear pricing section.</p>
           </article>
           <article class="feature-card">
-            <div class="icon-box">03</div>
+            <div class="icon-box"><iconify-icon icon="lucide:qr-code" aria-hidden="true"></iconify-icon><span>03</span></div>
             <h3>QR Check-In</h3>
             <p>Let members scan their QR code at the front desk so attendance is recorded automatically.</p>
           </article>
           <article class="feature-card">
-            <div class="icon-box">04</div>
+            <div class="icon-box"><iconify-icon icon="lucide:calendar-check-2" aria-hidden="true"></iconify-icon><span>04</span></div>
             <h3>Trainer Booking</h3>
             <p>Allow members to book personal training, boxing, strength coaching, or body transformation consultations.</p>
           </article>
           <article class="feature-card">
-            <div class="icon-box">05</div>
+            <div class="icon-box"><iconify-icon icon="lucide:bell-ring" aria-hidden="true"></iconify-icon><span>05</span></div>
             <h3>Renewal Reminders</h3>
             <p>Track membership expiry dates and remind members before their plan ends.</p>
           </article>
           <article class="feature-card">
-            <div class="icon-box">06</div>
+            <div class="icon-box"><iconify-icon icon="lucide:layout-dashboard" aria-hidden="true"></iconify-icon><span>06</span></div>
             <h3>Admin Dashboard</h3>
             <p>Manage inquiries, active members, check-ins, trainers, promos, and basic reports from one dashboard.</p>
           </article>
@@ -132,9 +131,9 @@
               <h3>Daily Pass</h3>
               <div class="price">₱80<span>/day</span></div>
               <ul>
-                <li>Gym access for one day</li>
-                <li>Beginner-friendly equipment</li>
-                <li>Walk-in registration</li>
+                <li><iconify-icon icon="lucide:check" aria-hidden="true"></iconify-icon>Gym access for one day</li>
+                <li><iconify-icon icon="lucide:check" aria-hidden="true"></iconify-icon>Beginner-friendly equipment</li>
+                <li><iconify-icon icon="lucide:check" aria-hidden="true"></iconify-icon>Walk-in registration</li>
               </ul>
               <a href="#contact" class="btn btn-outline">Choose Plan</a>
             </article>
@@ -144,9 +143,9 @@
               <h3>Monthly Access</h3>
               <div class="price">₱800<span>/month</span></div>
               <ul>
-                <li>Unlimited gym access</li>
-                <li>QR attendance check-in</li>
-                <li>Membership expiry reminder</li>
+                <li><iconify-icon icon="lucide:check" aria-hidden="true"></iconify-icon>Unlimited gym access</li>
+                <li><iconify-icon icon="lucide:check" aria-hidden="true"></iconify-icon>QR attendance check-in</li>
+                <li><iconify-icon icon="lucide:check" aria-hidden="true"></iconify-icon>Membership expiry reminder</li>
               </ul>
               <a href="#contact" class="btn btn-primary">Choose Plan</a>
             </article>
@@ -156,9 +155,9 @@
               <h3>Personal Training</h3>
               <div class="price">Custom<span>/package</span></div>
               <ul>
-                <li>One-on-one coaching</li>
-                <li>Workout program guidance</li>
-                <li>Progress monitoring</li>
+                <li><iconify-icon icon="lucide:check" aria-hidden="true"></iconify-icon>One-on-one coaching</li>
+                <li><iconify-icon icon="lucide:check" aria-hidden="true"></iconify-icon>Workout program guidance</li>
+                <li><iconify-icon icon="lucide:check" aria-hidden="true"></iconify-icon>Progress monitoring</li>
               </ul>
               <a href="#booking" class="btn btn-outline">Book Coach</a>
             </article>
@@ -255,12 +254,12 @@
 
         <div class="dashboard-shell">
           <aside class="sidebar-preview">
-            <div class="sidebar-logo">G</div>
-            <a class="active" href="#dashboard">Overview</a>
-            <a href="#dashboard">Members</a>
-            <a href="#dashboard">Check-ins</a>
-            <a href="#dashboard">Bookings</a>
-            <a href="#dashboard">Promos</a>
+            <img class="sidebar-logo" src="assets/gng-logo.svg" alt="GNG Fitness" />
+            <a class="active" href="#dashboard"><iconify-icon icon="lucide:layout-dashboard" aria-hidden="true"></iconify-icon>Overview</a>
+            <a href="#dashboard"><iconify-icon icon="lucide:users" aria-hidden="true"></iconify-icon>Members</a>
+            <a href="#dashboard"><iconify-icon icon="lucide:scan-line" aria-hidden="true"></iconify-icon>Check-ins</a>
+            <a href="#dashboard"><iconify-icon icon="lucide:calendar-check-2" aria-hidden="true"></iconify-icon>Bookings</a>
+            <a href="#dashboard"><iconify-icon icon="lucide:badge-percent" aria-hidden="true"></iconify-icon>Promos</a>
           </aside>
 
           <div class="dashboard-main">
@@ -269,7 +268,7 @@
                 <span>Today</span>
                 <h3>Gym Operations</h3>
               </div>
-              <button type="button">Export Report</button>
+              <button type="button"><iconify-icon icon="lucide:download" aria-hidden="true"></iconify-icon> Export Report</button>
             </div>
 
             <div class="metric-grid">
@@ -352,9 +351,9 @@
             </p>
 
             <div class="contact-details">
-              <p><strong>Location:</strong> Teresa / Antipolo / Rizal Branch</p>
-              <p><strong>Open:</strong> Monday to Sunday, 6:00 AM - 10:00 PM</p>
-              <p><strong>Contact:</strong> 09XX XXX XXXX</p>
+              <p><iconify-icon icon="lucide:map-pin" aria-hidden="true"></iconify-icon><span><strong>Location:</strong> Teresa / Antipolo / Rizal Branch</span></p>
+              <p><iconify-icon icon="lucide:clock-3" aria-hidden="true"></iconify-icon><span><strong>Open:</strong> Monday to Sunday, 6:00 AM - 10:00 PM</span></p>
+              <p><iconify-icon icon="lucide:phone" aria-hidden="true"></iconify-icon><span><strong>Contact:</strong> 09XX XXX XXXX</span></p>
             </div>
           </div>
 
@@ -415,7 +414,7 @@
     <footer class="site-footer">
       <div class="container footer-content">
         <p>© 2026 GNG Fitness. Train strong. Stay consistent.</p>
-        <a href="#home">Back to top ↑</a>
+        <a href="#home">Back to top <iconify-icon icon="lucide:arrow-up" aria-hidden="true"></iconify-icon></a>
       </div>
     </footer>
   </body>
