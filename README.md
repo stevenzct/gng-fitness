@@ -1,25 +1,32 @@
-# GNG Fitness Member Hub Prototype
+# GNG Fitness Website and Management System Prototype
 
-A mobile-first HTML/Tailwind CSS prototype for a gym website and member management system.
+A complete frontend-only presentation prototype built with HTML, CSS, and vanilla JavaScript.
 
-## Included sections
+## Demo flow
 
-- Landing page
-- Membership plans
-- Online inquiry form
-- Trainer profiles
-- Trainer booking preview
-- QR check-in preview
-- Member/admin dashboard preview
-- Promo/referral section
-- FAQ
+1. Open `index.html`.
+2. Choose **Sign Up** to preview member onboarding, or **Login** to continue directly.
+3. Enter any email and password on the login page.
+4. Choose a role on the clearly labeled **Prototype Role Preview** page.
+5. Explore the Member, Coach, or Super Admin dashboard.
+6. Use **Logout** to return to the prototype login page.
 
-## How to run
+## Pages
 
-Open `index.html` directly in your browser. The prototype loads Tailwind CSS v4 through the official browser package, so an internet connection is required for the Tailwind layout layer.
+- `index.html` — public gym website
+- `signup.html` — prototype member registration
+- `login.html` — mock login
+- `role-selection.html` — demo-only role preview
+- `member-dashboard.html` — member portal
+- `coach-dashboard.html` — coaching workspace
+- `admin-dashboard.html` — super admin management system
 
-For production, replace the browser package with the Tailwind CLI or another build-time integration.
+## Prototype behavior
 
-## Suggested next step
+- No backend, database, API, authentication server, or payment gateway is used.
+- Dashboard data is static sample data.
+- Signup stores non-sensitive demo profile fields temporarily in `localStorage`.
+- Profile and payment images are previewed or named locally and are never uploaded.
+- Buttons display simulated feedback and do not perform real business operations.
 
-Convert this prototype into Next.js, Nuxt, or React once the gym approves the design direction.
+Open `index.html` directly in a modern browser. No build or installation step is required.

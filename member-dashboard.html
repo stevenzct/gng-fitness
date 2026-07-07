@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Member Dashboard | GNG Fitness Prototype</title>
+  <link rel="stylesheet" href="assets/css/style.css"><script src="https://code.iconify.design/iconify-icon/3.0.0/iconify-icon.min.js" defer></script><script src="assets/js/main.js" defer></script>
+</head>
+<body class="dashboard-body">
+  <div class="dashboard-layout">
+    <aside class="dashboard-sidebar">
+      <div class="sidebar-head"><a class="logo-wrap" href="index.html"><img src="assets/gng-logo.svg" alt="GNG Fitness"></a></div>
+      <nav class="dashboard-nav" aria-label="Member dashboard">
+        <button data-tab="overview" data-title="Member Overview"><iconify-icon icon="lucide:layout-dashboard"></iconify-icon>Overview</button>
+        <button data-tab="profile" data-title="My Profile"><iconify-icon icon="lucide:user-round"></iconify-icon>My Profile</button>
+        <button data-tab="subscription" data-title="Subscription"><iconify-icon icon="lucide:badge-check"></iconify-icon>Subscription</button>
+        <button data-tab="payments" data-title="Payments"><iconify-icon icon="lucide:wallet-cards"></iconify-icon>Payments</button>
+        <button data-tab="attendance" data-title="Attendance"><iconify-icon icon="lucide:scan-qr-code"></iconify-icon>Attendance</button>
+        <button data-tab="health" data-title="Health Assessment"><iconify-icon icon="lucide:heart-pulse"></iconify-icon>Health Assessment</button>
+        <button data-tab="body" data-title="Body Assessment"><iconify-icon icon="lucide:scan-face"></iconify-icon>Body Assessment</button>
+        <button data-tab="workout" data-title="Workout Plan"><iconify-icon icon="lucide:clipboard-list"></iconify-icon>Workout Plan</button>
+        <button data-tab="coach" data-title="My Coach"><iconify-icon icon="lucide:dumbbell"></iconify-icon>My Coach</button>
+        <button data-tab="rewards" data-title="Rewards & Referral"><iconify-icon icon="lucide:gift"></iconify-icon>Rewards & Referral</button>
+        <button data-tab="notifications" data-title="Notifications"><iconify-icon icon="lucide:bell"></iconify-icon>Notifications</button>
+        <button data-tab="settings" data-title="Settings"><iconify-icon icon="lucide:settings"></iconify-icon>Settings</button>
+        <a class="logout" href="login.html"><iconify-icon icon="lucide:log-out"></iconify-icon>Logout</a>
+      </nav>
+      <div class="sidebar-foot"><div class="user-chip"><span class="user-avatar">JD</span><span><strong>Juan Dela Cruz</strong><small>Active member</small></span></div></div>
+    </aside>
+
+    <div class="dashboard-workspace">
+      <header class="dashboard-topbar">
+        <div class="cluster"><button class="icon-btn sidebar-toggle" aria-label="Open navigation" aria-expanded="false"><iconify-icon icon="lucide:menu"></iconify-icon></button><div><h1 id="dashboard-page-title">Member Overview</h1><p>Welcome back, Juan. Keep showing up.</p></div></div>
+        <div class="topbar-actions"><span class="prototype-badge">Prototype Mode · No backend connected</span><button class="icon-btn" data-demo-action="Notifications opened" aria-label="Notifications"><iconify-icon icon="lucide:bell"></iconify-icon></button></div>
+      </header>
+      <main class="dashboard-main">
+        <section class="tab-panel" data-panel="overview">
+          <div class="page-intro"><div><p class="eyebrow">Today at GNG</p><h2>Your fitness snapshot.</h2><p>Tuesday, July 7 · Antipolo Branch</p></div><button class="btn btn-primary" data-tab="attendance">Show check-in QR</button></div>
+          <div class="stat-grid">
+            <article class="stat-card"><small>Subscription Status</small><strong>Active</strong><span>Monthly membership</span></article>
+            <article class="stat-card"><small>Next Payment</small><strong>Aug 02</strong><span>₱900 due</span></article>
+            <article class="stat-card"><small>Attendance This Month</small><strong>12 visits</strong><span>+3 from last month</span></article>
+            <article class="stat-card"><small>Health Status</small><strong>Fit</strong><span>Fit to workout</span></article>
+            <article class="stat-card"><small>Assigned Coach</small><strong>Adrian</strong><span>Next session: Thursday</span></article>
+            <article class="stat-card"><small>Rewards Points</small><strong>480 pts</strong><span>120 points to next reward</span></article>
+          </div>
+          <div class="dashboard-grid">
+            <article class="panel"><div class="panel-head"><div><h3>Weekly consistency</h3><p>Goal: train at least 4 days</p></div><span class="badge success">On track</span></div><div class="progress-list"><div class="progress-item"><div class="progress-meta"><span>Attendance</span><strong>4 / 4 days</strong></div><div class="progress-track"><span style="width:100%"></span></div></div><div class="progress-item"><div class="progress-meta"><span>Workout completion</span><strong>82%</strong></div><div class="progress-track"><span style="width:82%"></span></div></div><div class="progress-item"><div class="progress-meta"><span>Monthly goal</span><strong>68%</strong></div><div class="progress-track"><span style="width:68%"></span></div></div></div></article>
+            <article class="panel"><div class="panel-head"><h3>Next coaching session</h3><span class="badge info">Scheduled</span></div><div class="detail-list"><div class="detail-row"><span>Coach</span><strong>Coach Adrian</strong></div><div class="detail-row"><span>Date</span><strong>Thursday, July 9</strong></div><div class="detail-row"><span>Time</span><strong>6:30 PM</strong></div><div class="detail-row"><span>Session</span><strong>Upper Body Strength</strong></div></div></article>
+          </div>
+        </section>
+
+        <section class="tab-panel" data-panel="profile">
+          <div class="page-intro"><div><p class="eyebrow">Member record</p><h2>My Profile</h2><p>Editable-looking sample details for the member experience.</p></div><button class="btn btn-primary" data-demo-action="Profile saved">Save changes</button></div>
+          <article class="panel profile-card"><div class="profile-large">JD</div><form class="form-grid"><div class="field"><label>First name</label><input value="Juan"></div><div class="field"><label>Last name</label><input value="Dela Cruz"></div><div class="field"><label>Email</label><input value="juan@example.com"></div><div class="field"><label>Phone</label><input value="0917 555 0142"></div><div class="field"><label>Birthdate</label><input type="date" value="1997-04-18"></div><div class="field"><label>Fitness goal</label><select><option>Build muscle</option><option>Lose weight</option></select></div><div class="field full"><label>Address</label><input value="Teresa, Rizal"></div></form></article>
+        </section>
+
+        <section class="tab-panel" data-panel="subscription">
+          <div class="page-intro"><div><p class="eyebrow">Membership</p><h2>Subscription</h2><p>Track access, renewal, and plan details.</p></div><button class="btn btn-primary" data-demo-action="Renewal request started">Renew membership</button></div>
+          <div class="dashboard-grid"><article class="panel"><div class="panel-head"><h3>Monthly Membership</h3><span class="badge success">Active</span></div><div class="detail-list"><div class="detail-row"><span>Subscription type</span><strong>Unlimited Monthly Access</strong></div><div class="detail-row"><span>Start date</span><strong>July 02, 2026</strong></div><div class="detail-row"><span>Expiration date</span><strong>August 01, 2026</strong></div><div class="detail-row"><span>Next payment</span><strong>August 02, 2026 · ₱900</strong></div><div class="detail-row"><span>Home branch</span><strong>Antipolo Branch</strong></div></div></article><article class="panel"><div class="panel-head"><h3>Plan includes</h3></div><ul class="check-list"><li>Unlimited daily gym access</li><li>Digital member QR</li><li>Attendance history</li><li>Basic body assessment</li><li>Member reward points</li></ul></article></div>
+        </section>
+
+        <section class="tab-panel" data-panel="payments">
+          <div class="page-intro"><div><p class="eyebrow">Billing</p><h2>Payments</h2><p>Mock QR instructions, proof upload, and payment history.</p></div></div>
+          <div class="dashboard-grid"><article class="panel"><div class="panel-head"><h3>Pay via GCash</h3><span class="badge warning">UI only</span></div><div class="split" style="align-items:flex-start"><div class="qr-box"><span>GNG PAY</span></div><div class="stack"><p class="small muted">1. Scan the sample QR.<br>2. Enter the exact plan amount.<br>3. Keep your reference number.<br>4. Upload proof for verification.</p><label class="btn btn-secondary btn-sm" for="payment-proof">Choose proof</label><input class="sr-only" id="payment-proof" type="file" data-file-label="payment-file"><small id="payment-file" class="muted">No file selected</small><button class="btn btn-primary btn-sm" data-demo-action="Payment proof submitted">Submit proof</button></div></div></article><article class="panel"><div class="panel-head"><h3>Current balance</h3><span class="badge success">Paid</span></div><div class="price">₱0 <small>outstanding</small></div><p class="muted small">Next billing date: August 02, 2026</p></article></div>
+          <article class="panel" style="margin-top:14px"><div class="panel-head"><h3>Payment history</h3></div><div class="table-wrap"><table class="data-table"><thead><tr><th>Date</th><th>Reference</th><th>Plan</th><th>Amount</th><th>Status</th></tr></thead><tbody><tr><td>Jul 02, 2026</td><td>GNG-071024</td><td>Monthly Membership</td><td>₱900</td><td><span class="badge success">Verified</span></td></tr><tr><td>Jun 02, 2026</td><td>GNG-068914</td><td>Monthly Membership</td><td>₱900</td><td><span class="badge success">Verified</span></td></tr><tr><td>May 02, 2026</td><td>GNG-055102</td><td>Monthly Membership</td><td>₱900</td><td><span class="badge danger">Rejected</span></td></tr><tr><td>May 03, 2026</td><td>GNG-055190</td><td>Monthly Membership</td><td>₱900</td><td><span class="badge warning">Pending Verification</span></td></tr></tbody></table></div></article>
+        </section>
+
+        <section class="tab-panel" data-panel="attendance">
+          <div class="page-intro"><div><p class="eyebrow">Gym access</p><h2>Attendance</h2><p>Present your prototype member QR at the front desk.</p></div></div>
+          <div class="dashboard-grid"><article class="panel"><div class="panel-head"><h3>My check-in QR</h3><span class="badge success">Access active</span></div><div class="split"><div class="qr-box"><span>JD-2048</span></div><div><strong>Juan Dela Cruz</strong><p class="muted small">Member ID: GNG-2048<br>Valid until: Aug 01, 2026</p></div></div></article><article class="panel"><div class="panel-head"><h3>Visit summary</h3></div><div class="stat-grid" style="grid-template-columns:1fr 1fr"><article class="stat-card"><small>Total visits</small><strong>78</strong><span>All time</span></article><article class="stat-card"><small>Last check-in</small><strong>6:14 PM</strong><span>July 06</span></article></div></article></div>
+          <article class="panel" style="margin-top:14px"><div class="panel-head"><h3>Attendance history</h3></div><div class="table-wrap"><table class="data-table"><thead><tr><th>Date</th><th>Check-in</th><th>Check-out</th><th>Branch</th><th>Duration</th></tr></thead><tbody><tr><td>Jul 06</td><td>6:14 PM</td><td>7:42 PM</td><td>Antipolo</td><td>1h 28m</td></tr><tr><td>Jul 04</td><td>7:02 AM</td><td>8:16 AM</td><td>Antipolo</td><td>1h 14m</td></tr><tr><td>Jul 02</td><td>6:25 PM</td><td>7:51 PM</td><td>Antipolo</td><td>1h 26m</td></tr></tbody></table></div></article>
+        </section>
+
+        <section class="tab-panel" data-panel="health">
+          <div class="page-intro"><div><p class="eyebrow">Fitness readiness</p><h2>Health Assessment</h2><p>Select any condition that applies to this prototype profile.</p></div></div>
+          <div class="dashboard-grid"><form class="panel" id="health-assessment-form"><div class="panel-head"><h3>Readiness checklist</h3><span class="badge neutral">Self-reported</span></div><div class="assessment-grid"><label class="assessment-item"><input type="checkbox"> Asthma</label><label class="assessment-item"><input type="checkbox"> Diabetes</label><label class="assessment-item"><input type="checkbox"> High blood pressure</label><label class="assessment-item"><input type="checkbox"> Heart condition</label><label class="assessment-item"><input type="checkbox"> Recent surgery</label><label class="assessment-item"><input type="checkbox"> Chest pain during workout</label><label class="assessment-item"><input type="checkbox"> Dizziness during workout</label><label class="assessment-item"><input type="checkbox"> Taking maintenance medicine</label></div></form><article class="panel"><div class="panel-head"><h3>Assessment result</h3></div><div class="result-card" id="health-result"><strong id="health-result-label">Fit to Workout</strong><p class="small" style="margin-top:6px">No risk flags are currently selected.</p></div><p class="muted small" style="margin-top:16px"><strong>Disclaimer:</strong> This assessment is for fitness readiness guidance only and is not a medical diagnosis.</p></article></div>
+        </section>
+
+        <section class="tab-panel" data-panel="body">
+          <div class="page-intro"><div><p class="eyebrow">Measurements</p><h2>Body Assessment</h2><p>Sample fields and computed-looking progress indicators.</p></div><button class="btn btn-primary" data-demo-action="Assessment saved">Save assessment</button></div>
+          <div class="dashboard-grid"><form class="panel form-grid" id="body-assessment-form"><div class="field"><label>Height (cm)</label><input id="body-height" type="number" value="172"></div><div class="field"><label>Weight (kg)</label><input id="body-weight" type="number" value="71.3"></div><div class="field"><label>Neck (cm)</label><input value="37"></div><div class="field"><label>Chest (cm)</label><input value="96"></div><div class="field"><label>Waist (cm)</label><input value="82"></div><div class="field"><label>Hip (cm)</label><input value="94"></div><div class="field"><label>Thigh (cm)</label><input value="55"></div><div class="field"><label>Arm (cm)</label><input value="32"></div></form><div class="stat-grid" style="grid-template-columns:1fr 1fr"><article class="stat-card"><small>BMI Score</small><strong id="bmi-value">24.1</strong><span>Normal range</span></article><article class="stat-card"><small>Waist-to-Hip</small><strong>0.87</strong><span>Moderate</span></article><article class="stat-card"><small>Fat distribution</small><strong>Balanced</strong><span>Sample estimate</span></article><article class="stat-card"><small>Progress</small><strong>-2.4 kg</strong><span>Last 60 days</span></article></div></div>
+        </section>
+
+        <section class="tab-panel" data-panel="workout">
+          <div class="page-intro"><div><p class="eyebrow">Coach assigned</p><h2>3-Day PPL Plan</h2><p>Goal: Build muscle · Intermediate · Coach Adrian</p></div><span class="badge success">Active plan</span></div>
+          <article class="panel"><div class="panel-head"><h3>Push Day · Monday</h3><span class="badge neutral">Week 4 of 8</span></div><div class="table-wrap"><table class="data-table"><thead><tr><th>Exercise</th><th>Sets</th><th>Reps</th><th>Rest</th><th>Coach notes</th></tr></thead><tbody><tr><td>Barbell Bench Press</td><td>4</td><td>8–10</td><td>90 sec</td><td>Control the lowering phase</td></tr><tr><td>Incline Dumbbell Press</td><td>3</td><td>10–12</td><td>75 sec</td><td>Keep shoulders down</td></tr><tr><td>Seated Shoulder Press</td><td>3</td><td>8–10</td><td>75 sec</td><td>Do not arch lower back</td></tr><tr><td>Cable Triceps Pushdown</td><td>3</td><td>12–15</td><td>45 sec</td><td>Full extension</td></tr></tbody></table></div></article>
+          <div class="panel-grid" style="margin-top:14px"><article class="panel"><div class="panel-head"><h3>Pull Day · Wednesday</h3></div><p class="muted small">Lat pulldown · Seated cable row · Face pulls · Dumbbell curls</p></article><article class="panel"><div class="panel-head"><h3>Leg Day · Friday</h3></div><p class="muted small">Back squat · Romanian deadlift · Leg press · Calf raises</p></article></div>
+        </section>
+
+        <section class="tab-panel" data-panel="coach">
+          <div class="page-intro"><div><p class="eyebrow">Your guide</p><h2>My Coach</h2><p>Assigned coaching contact and upcoming program.</p></div><button class="btn btn-primary" data-demo-action="Message window opened">Message coach</button></div>
+          <article class="panel profile-card"><div class="profile-large">CA</div><div><h2 style="font-size:38px">Coach Adrian Santos</h2><p class="lead" style="margin:10px 0 20px">Strength Training · Form Coaching · Beginner Programs</p><div class="detail-list"><div class="detail-row"><span>Contact</span><strong>coach.adrian@gngfitness.ph · 0917 555 0188</strong></div><div class="detail-row"><span>Assigned program</span><strong>8-Week Muscle Foundation</strong></div><div class="detail-row"><span>Next session</span><strong>Thursday, July 9 · 6:30 PM</strong></div><div class="detail-row"><span>Coaching status</span><strong><span class="badge success">Active</span></strong></div></div></div></article>
+        </section>
+
+        <section class="tab-panel" data-panel="rewards">
+          <div class="page-intro"><div><p class="eyebrow">Member perks</p><h2>Rewards & Referral</h2><p>Invite friends and earn points for consistent activity.</p></div><button class="btn btn-primary" data-demo-action="Referral code copied">Copy referral code</button></div>
+          <div class="stat-grid"><article class="stat-card"><small>Referral code</small><strong>JUAN-GNG24</strong><span>Share with a friend</span></article><article class="stat-card"><small>Reward points</small><strong>480</strong><span>Lifetime: 1,240</span></article><article class="stat-card"><small>Successful referrals</small><strong>3</strong><span>2 active this month</span></article></div>
+          <div class="panel-grid" style="margin-top:14px"><article class="panel"><div class="panel-head"><h3>Redeemable rewards</h3></div><div class="detail-list"><div class="detail-row"><span>3 extra gym days</span><button class="btn btn-sm btn-secondary" data-demo-action="Reward redeemed">300 pts</button></div><div class="detail-row"><span>GNG shaker bottle</span><button class="btn btn-sm btn-secondary" data-demo-action="More points needed">600 pts</button></div></div></article><article class="panel"><div class="panel-head"><h3>Referral history</h3></div><div class="detail-list"><div class="detail-row"><span>Mika R.</span><strong class="accent">+200 pts</strong></div><div class="detail-row"><span>Arvin L.</span><strong class="accent">+200 pts</strong></div></div></article></div>
+        </section>
+
+        <section class="tab-panel" data-panel="notifications">
+          <div class="page-intro"><div><p class="eyebrow">Updates</p><h2>Notifications</h2><p>Membership, booking, and gym announcements.</p></div><button class="btn btn-secondary" data-demo-action="All notifications marked read">Mark all as read</button></div>
+          <article class="panel"><div class="notification-item"><i class="notification-dot"></i><div><strong>Coaching session confirmed</strong><p>Your Thursday session with Coach Adrian is scheduled for 6:30 PM.</p></div><time>10m</time></div><div class="notification-item"><i class="notification-dot"></i><div><strong>12 visits this month</strong><p>You are three visits ahead of last month. Keep the streak going.</p></div><time>1d</time></div><div class="notification-item"><i class="notification-dot"></i><div><strong>Membership renewal reminder</strong><p>Your plan renews on August 02, 2026.</p></div><time>2d</time></div></article>
+        </section>
+
+        <section class="tab-panel" data-panel="settings">
+          <div class="page-intro"><div><p class="eyebrow">Account</p><h2>Settings</h2><p>Prototype-only account controls.</p></div></div>
+          <div class="panel-grid"><article class="panel"><div class="panel-head"><h3>Account preferences</h3></div><div class="form-grid"><div class="field full"><label>Email notifications</label><select><option>Enabled</option><option>Disabled</option></select></div><div class="field full"><label>Home branch</label><select><option>Antipolo Branch</option></select></div></div><button class="btn btn-primary btn-sm" style="margin-top:14px" data-demo-action="Preferences saved">Save preferences</button></article><article class="panel"><div class="panel-head"><h3>Security</h3></div><div class="stack"><button class="btn btn-secondary" data-demo-action="Password form opened">Change password</button><button class="btn btn-danger" data-demo-action="Deactivation confirmation opened">Deactivate account</button><button class="btn btn-danger" data-demo-action="Delete confirmation opened">Delete account</button></div></article></div>
+        </section>
+      </main>
+    </div>
+  </div>
+</body>
+</html>

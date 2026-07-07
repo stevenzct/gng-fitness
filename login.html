@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login | GNG Fitness Prototype</title>
+  <link rel="stylesheet" href="assets/css/style.css"><script src="https://code.iconify.design/iconify-icon/3.0.0/iconify-icon.min.js" defer></script><script src="assets/js/main.js" defer></script>
+</head>
+<body>
+  <main class="auth-page auth-login-page">
+    <section class="auth-brand">
+      <a class="logo-wrap" href="index.html" style="width:fit-content"><img src="assets/gng-logo.svg" alt="GNG Fitness"></a>
+      <div class="auth-brand-copy"><p class="eyebrow">Member management prototype</p><h1>Welcome back to your strongest routine.</h1><p class="lead">Open the prototype and preview the member, coach, or super admin experience—no real account required.</p><div class="auth-points"><span><iconify-icon icon="lucide:shield-check"></iconify-icon>No real login</span><span><iconify-icon icon="lucide:layout-dashboard"></iconify-icon>4 role previews</span></div></div>
+      <p class="small muted">Prototype Mode · No backend connected</p>
+    </section>
+    <section class="auth-panel">
+      <div class="auth-box">
+        <span class="prototype-badge">● Prototype login</span>
+        <h2>Login</h2>
+        <p class="muted">Enter any email and password to continue to the role preview.</p>
+        <div class="auth-demo-note"><iconify-icon icon="lucide:info"></iconify-icon><span><strong>Demo access</strong> Any email and password will work.</span></div>
+        <form id="login-form" class="stack">
+          <div class="field"><label for="login-email">Email address</label><input id="login-email" type="email" placeholder="member@gngfitness.ph" required></div>
+          <div class="field"><label for="login-password">Password</label><div class="password-wrap"><input id="login-password" type="password" placeholder="Enter any password" required><button class="password-toggle" type="button" data-password-toggle="login-password" aria-label="Show password"><iconify-icon icon="lucide:eye"></iconify-icon></button></div></div>
+          <div class="split"><label class="checkbox"><input id="remember-me" type="checkbox"> Remember me</label><button class="btn btn-sm btn-secondary" type="button" data-demo-action="Reset link prepared"><iconify-icon icon="lucide:key-round"></iconify-icon>Forgot password?</button></div>
+          <button class="btn btn-primary btn-block" type="submit">Login to prototype <iconify-icon icon="lucide:arrow-right"></iconify-icon></button>
+        </form>
+        <p class="auth-footer">New to GNG Fitness? <a href="signup.html">Create a prototype account</a></p>
+        <p class="auth-footer"><a href="index.html"><iconify-icon icon="lucide:arrow-left"></iconify-icon> Back to landing page</a></p>
+      </div>
+    </section>
+  </main>
+</body>
+</html>

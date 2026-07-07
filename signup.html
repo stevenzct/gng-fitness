@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sign Up | GNG Fitness Prototype</title>
+  <link rel="stylesheet" href="assets/css/style.css"><script src="https://code.iconify.design/iconify-icon/3.0.0/iconify-icon.min.js" defer></script><script src="assets/js/main.js" defer></script>
+</head>
+<body>
+  <main class="auth-page auth-signup-page">
+    <section class="auth-brand">
+      <a class="logo-wrap" href="index.html" style="width:fit-content"><img src="assets/gng-logo.svg" alt="GNG Fitness"></a>
+      <div class="auth-brand-copy"><p class="eyebrow">Start your fitness journey</p><h1>Your next personal best begins here.</h1><p class="lead">Create a sample member profile to demonstrate the GNG onboarding experience.</p><div class="auth-points"><span><iconify-icon icon="lucide:user-plus"></iconify-icon>Quick onboarding</span><span><iconify-icon icon="lucide:lock-keyhole"></iconify-icon>Local demo data</span></div></div>
+      <p class="small muted">Prototype Mode · Information stays only in this browser</p>
+    </section>
+    <section class="auth-panel">
+      <div class="auth-box wide">
+        <span class="prototype-badge">● Prototype signup</span>
+        <h2>Create account</h2>
+        <p class="muted">All fields are for demonstration only. No information is sent to a server.</p>
+        <form id="signup-form" class="stack">
+          <div class="profile-upload"><div class="profile-preview" id="profile-preview"><iconify-icon icon="lucide:user-round"></iconify-icon></div><div class="profile-file-control"><strong>Add a profile photo</strong><p class="small muted">JPG or PNG · Previewed locally only</p><label class="btn btn-secondary btn-sm" for="profile-image"><iconify-icon icon="lucide:image-up"></iconify-icon>Choose image</label><input class="sr-only" id="profile-image" name="profileImage" type="file" accept="image/*"></div></div>
+          <div class="form-grid">
+            <div class="field"><label for="first-name">First name</label><input id="first-name" name="firstName" required placeholder="Juan"></div>
+            <div class="field"><label for="last-name">Last name</label><input id="last-name" name="lastName" required placeholder="Dela Cruz"></div>
+            <div class="field"><label for="signup-email">Email</label><input id="signup-email" name="email" type="email" required placeholder="juan@example.com"></div>
+            <div class="field"><label for="signup-phone">Phone number</label><input id="signup-phone" name="phone" type="tel" required placeholder="09XX XXX XXXX"></div>
+            <div class="field"><label for="birthdate">Birthdate</label><input id="birthdate" name="birthdate" type="date" required></div>
+            <div class="field"><label for="fitness-goal">Fitness goal</label><select id="fitness-goal" name="fitnessGoal"><option>Lose weight</option><option>Build muscle</option><option>Improve endurance</option><option>General fitness</option><option>Strength training</option></select></div>
+            <div class="field full"><label for="address">Address</label><input id="address" name="address" required placeholder="Street, Barangay, City, Province"></div>
+            <div class="field"><label for="signup-password">Password</label><div class="password-wrap"><input id="signup-password" name="password" type="password" required minlength="6" placeholder="At least 6 characters"><button type="button" class="password-toggle" data-password-toggle="signup-password" aria-label="Show password"><iconify-icon icon="lucide:eye"></iconify-icon></button></div></div>
+            <div class="field"><label for="confirm-password">Confirm password</label><div class="password-wrap"><input id="confirm-password" name="confirmPassword" type="password" required minlength="6" placeholder="Repeat password"><button type="button" class="password-toggle" data-password-toggle="confirm-password" aria-label="Show password"><iconify-icon icon="lucide:eye"></iconify-icon></button></div></div>
+          </div>
+          <label class="checkbox"><input type="checkbox" required> I understand this is a frontend-only prototype.</label>
+          <button class="btn btn-primary btn-block" type="submit"><iconify-icon icon="lucide:user-plus"></iconify-icon>Create prototype account</button>
+        </form>
+        <div class="success-box" id="signup-success"><strong>Prototype account created successfully.</strong><p class="small" style="margin:5px 0 12px">You can now continue to login.</p><a class="btn btn-primary btn-sm" href="login.html">Go to Login</a></div>
+        <p class="auth-footer">Already have an account? <a href="login.html">Login</a> · <a href="index.html">Back home</a></p>
+      </div>
+    </section>
+  </main>
+</body>
+</html>
