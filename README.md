@@ -6,19 +6,20 @@ A complete frontend-only presentation prototype built with HTML, CSS, and vanill
 
 1. Open `index.html`.
 2. Choose **Sign Up** to preview member onboarding, or **Login** to continue directly.
-3. Enter any email and password on the login page.
-4. Choose a role on the clearly labeled **Prototype Role Preview** page.
-5. Explore the Member, Coach, or Super Admin dashboard.
+3. Choose Member, Coach, Staff, or Super Admin directly on the login page.
+4. The prototype generates demo credentials automatically.
+5. Select **Continue** to open the matching dashboard.
 6. Use **Logout** to return to the prototype login page.
 
 ## Pages
 
 - `index.html` — public gym website
 - `signup.html` — prototype member registration
-- `login.html` — mock login
-- `role-selection.html` — demo-only role preview
+- `login.html` — mock login with integrated role preview and generated credentials
+- `role-selection.html` — legacy standalone role-preview page (not used in the main flow)
 - `member-dashboard.html` — member portal
 - `coach-dashboard.html` — coaching workspace
+- `staff-dashboard.html` — front desk workspace
 - `admin-dashboard.html` — super admin management system
 
 ## Prototype behavior

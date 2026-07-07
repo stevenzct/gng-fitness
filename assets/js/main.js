@@ -31,37 +31,40 @@
     aboutDropdownToggle?.setAttribute("aria-expanded", "false");
   };
   if (navToggle && publicLinks) {
-    navToggle.addEventListener("click", () => {
-      const open = publicLinks.classList.toggle("open");
+    const setPublicNavigationOpen = open => {
+      publicLinks.classList.toggle("open", open);
       document.body.classList.toggle("nav-open", open);
       navToggle.setAttribute("aria-expanded", String(open));
+      navToggle.setAttribute("aria-label", open ? "Close navigation" : "Open navigation");
       navToggle.innerHTML = `<iconify-icon icon="lucide:${open ? "x" : "menu"}"></iconify-icon>`;
+      if (!open) closeAboutDropdown();
+    };
+    navToggle.addEventListener("click", event => {
+      event.preventDefault();
+      event.stopPropagation();
+      setPublicNavigationOpen(!publicLinks.classList.contains("open"));
     });
     publicLinks.addEventListener("click", event => {
-      if (event.target.closest("a")) {
-        closeAboutDropdown();
-        publicLinks.classList.remove("open");
-        document.body.classList.remove("nav-open");
-        navToggle.setAttribute("aria-expanded", "false");
-        navToggle.innerHTML = '<iconify-icon icon="lucide:menu"></iconify-icon>';
+      const selectedLink = event.target.closest("a");
+      if (selectedLink) {
+        selectedLink.blur();
+        setPublicNavigationOpen(false);
       }
     });
     document.addEventListener("click", event => {
       if (publicLinks.classList.contains("open") && !publicLinks.contains(event.target) && !navToggle.contains(event.target)) {
-        closeAboutDropdown();
-        publicLinks.classList.remove("open");
-        document.body.classList.remove("nav-open");
-        navToggle.setAttribute("aria-expanded", "false");
-        navToggle.innerHTML = '<iconify-icon icon="lucide:menu"></iconify-icon>';
+        setPublicNavigationOpen(false);
+      }
+    });
+    document.addEventListener("keydown", event => {
+      if (event.key === "Escape" && publicLinks.classList.contains("open")) {
+        setPublicNavigationOpen(false);
+        navToggle.focus();
       }
     });
     window.addEventListener("resize", () => {
       if (window.innerWidth > 1120) {
-        closeAboutDropdown();
-        publicLinks.classList.remove("open");
-        document.body.classList.remove("nav-open");
-        navToggle.setAttribute("aria-expanded", "false");
-        navToggle.innerHTML = '<iconify-icon icon="lucide:menu"></iconify-icon>';
+        setPublicNavigationOpen(false);
       }
     });
   }
@@ -69,6 +72,12 @@
   if (aboutDropdown && aboutDropdownToggle) {
     aboutDropdownToggle.addEventListener("click", event => {
       event.stopPropagation();
+      $$(".nav-dropdown.open").forEach(dropdown => {
+        if (dropdown !== aboutDropdown) {
+          dropdown.classList.remove("open");
+          $(".nav-dropdown-toggle", dropdown)?.setAttribute("aria-expanded", "false");
+        }
+      });
       const open = aboutDropdown.classList.toggle("open");
       aboutDropdownToggle.setAttribute("aria-expanded", String(open));
     });
@@ -76,6 +85,16 @@
       if (!aboutDropdown.contains(event.target)) closeAboutDropdown();
     });
   }
+
+  const faqItems = $$(".faq-grid details");
+  faqItems.forEach(item => {
+    item.addEventListener("toggle", () => {
+      if (!item.open) return;
+      faqItems.forEach(otherItem => {
+        if (otherItem !== item) otherItem.open = false;
+      });
+    });
+  });
 
   $$('[data-password-toggle]').forEach(button => {
     button.addEventListener("click", () => {
@@ -121,33 +140,69 @@
 
   const loginForm = $("#login-form");
   if (loginForm) {
+    const roleButtons = $$('[data-login-role]', loginForm);
+    const emailInput = $("#login-email");
+    const passwordInput = $("#login-password");
+    const loginButton = $("#prototype-login-button");
+    let selectedDashboard = "";
+
+    const randomDigits = () => Math.floor(1000 + Math.random() * 9000);
+    roleButtons.forEach(button => {
+      button.addEventListener("click", () => {
+        const role = button.dataset.loginRole;
+        selectedDashboard = button.dataset.dashboard;
+        roleButtons.forEach(item => {
+          const active = item === button;
+          item.classList.toggle("active", active);
+          item.setAttribute("aria-pressed", String(active));
+        });
+        emailInput.value = `${role}.${randomDigits()}@gngfitness.demo`;
+        passwordInput.value = `GNG-${role.toUpperCase()}-${randomDigits()}!`;
+        loginButton.disabled = false;
+        loginButton.innerHTML = `Continue as ${button.textContent.trim()} <iconify-icon icon="lucide:arrow-right"></iconify-icon>`;
+      });
+    });
+
     loginForm.addEventListener("submit", event => {
       event.preventDefault();
-      const email = $("#login-email")?.value || "demo@gngfitness.ph";
+      if (!selectedDashboard) {
+        toast("Select a prototype role", "Choose Member, Coach, Staff, or Super Admin to generate demo credentials.");
+        return;
+      }
+      const email = emailInput?.value || "demo@gngfitness.ph";
       if ($("#remember-me")?.checked) localStorage.setItem("gngPrototypeEmail", email);
-      window.location.href = "role-selection.html";
+      window.location.href = selectedDashboard;
     });
-    const savedEmail = localStorage.getItem("gngPrototypeEmail");
-    if (savedEmail && $("#login-email")) $("#login-email").value = savedEmail;
   }
 
   const sidebar = $(".dashboard-sidebar");
   const sidebarToggle = $(".sidebar-toggle");
   if (sidebar && sidebarToggle) {
-    sidebarToggle.addEventListener("click", () => {
-      const open = sidebar.classList.toggle("open");
+    const setSidebarOpen = open => {
+      sidebar.classList.toggle("open", open);
+      document.body.classList.toggle("sidebar-open", open);
       sidebarToggle.setAttribute("aria-expanded", String(open));
+      sidebarToggle.setAttribute("aria-label", open ? "Close navigation" : "Open navigation");
+    };
+    sidebarToggle.addEventListener("click", event => {
+      event.preventDefault();
+      event.stopPropagation();
+      setSidebarOpen(!sidebar.classList.contains("open"));
     });
     document.addEventListener("click", event => {
       if (window.innerWidth <= 1100 && sidebar.classList.contains("open") && !sidebar.contains(event.target) && !sidebarToggle.contains(event.target)) {
-        sidebar.classList.remove("open");
-        sidebarToggle.setAttribute("aria-expanded", "false");
+        setSidebarOpen(false);
+      }
+    });
+    document.addEventListener("keydown", event => {
+      if (event.key === "Escape" && sidebar.classList.contains("open")) {
+        setSidebarOpen(false);
+        sidebarToggle.focus();
       }
     });
     window.addEventListener("resize", () => {
       if (window.innerWidth > 1100) {
-        sidebar.classList.remove("open");
-        sidebarToggle.setAttribute("aria-expanded", "false");
+        setSidebarOpen(false);
       }
     });
   }
@@ -164,6 +219,9 @@
     if (title) title.textContent = button.dataset.title || button.textContent.trim();
     history.replaceState(null, "", `#${id}`);
     sidebar?.classList.remove("open");
+    document.body.classList.remove("sidebar-open");
+    sidebarToggle?.setAttribute("aria-expanded", "false");
+    sidebarToggle?.setAttribute("aria-label", "Open navigation");
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
   tabButtons.forEach(button => button.addEventListener("click", () => activateTab(button.dataset.tab)));

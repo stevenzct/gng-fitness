@@ -9,20 +9,29 @@
   <main class="auth-page auth-login-page">
     <section class="auth-brand">
       <a class="logo-wrap" href="index.html" style="width:fit-content"><img src="assets/gng-logo.svg" alt="GNG Fitness"></a>
-      <div class="auth-brand-copy"><p class="eyebrow">Member management prototype</p><h1>Welcome back to your strongest routine.</h1><p class="lead">Open the prototype and preview the member, coach, or super admin experience—no real account required.</p><div class="auth-points"><span><iconify-icon icon="lucide:shield-check"></iconify-icon>No real login</span><span><iconify-icon icon="lucide:layout-dashboard"></iconify-icon>4 role previews</span></div></div>
+      <div class="auth-brand-copy"><p class="eyebrow">Gym management prototype</p><h1>Welcome back to your strongest routine.</h1><p class="lead">Choose a prototype role, receive instant demo credentials, and open the matching dashboard—no real account required.</p><div class="auth-points"><span><iconify-icon icon="lucide:shield-check"></iconify-icon>No real login</span><span><iconify-icon icon="lucide:layout-dashboard"></iconify-icon>4 role previews</span></div></div>
       <p class="small muted">Prototype Mode · No backend connected</p>
     </section>
     <section class="auth-panel">
       <div class="auth-box">
         <span class="prototype-badge">● Prototype login</span>
         <h2>Login</h2>
-        <p class="muted">Enter any email and password to continue to the role preview.</p>
-        <div class="auth-demo-note"><iconify-icon icon="lucide:info"></iconify-icon><span><strong>Demo access</strong> Any email and password will work.</span></div>
+        <p class="muted">Select a role to generate demo credentials and preview its dashboard.</p>
+        <div class="auth-demo-note"><iconify-icon icon="lucide:wand-sparkles"></iconify-icon><span><strong>Instant demo access</strong> Selecting a role automatically fills a random email and password.</span></div>
         <form id="login-form" class="stack">
-          <div class="field"><label for="login-email">Email address</label><input id="login-email" type="email" placeholder="member@gngfitness.ph" required></div>
-          <div class="field"><label for="login-password">Password</label><div class="password-wrap"><input id="login-password" type="password" placeholder="Enter any password" required><button class="password-toggle" type="button" data-password-toggle="login-password" aria-label="Show password"><iconify-icon icon="lucide:eye"></iconify-icon></button></div></div>
+          <fieldset class="login-role-picker">
+            <legend>Choose prototype role</legend>
+            <div class="login-role-grid">
+              <button type="button" data-login-role="member" data-dashboard="member-dashboard.html" aria-pressed="false"><iconify-icon icon="lucide:user-round"></iconify-icon><span>Member</span></button>
+              <button type="button" data-login-role="coach" data-dashboard="coach-dashboard.html" aria-pressed="false"><iconify-icon icon="lucide:dumbbell"></iconify-icon><span>Coach</span></button>
+              <button type="button" data-login-role="staff" data-dashboard="staff-dashboard.html" aria-pressed="false"><iconify-icon icon="lucide:scan-qr-code"></iconify-icon><span>Staff</span></button>
+              <button type="button" data-login-role="admin" data-dashboard="admin-dashboard.html" aria-pressed="false"><iconify-icon icon="lucide:shield-check"></iconify-icon><span>Super Admin</span></button>
+            </div>
+          </fieldset>
+          <div class="field"><label for="login-email">Email address</label><input id="login-email" type="email" placeholder="Select a role to generate an email" required></div>
+          <div class="field"><label for="login-password">Password</label><div class="password-wrap"><input id="login-password" type="password" placeholder="Select a role to generate a password" required><button class="password-toggle" type="button" data-password-toggle="login-password" aria-label="Show password"><iconify-icon icon="lucide:eye"></iconify-icon></button></div></div>
           <div class="split"><label class="checkbox"><input id="remember-me" type="checkbox"> Remember me</label><button class="btn btn-sm btn-secondary" type="button" data-demo-action="Reset link prepared"><iconify-icon icon="lucide:key-round"></iconify-icon>Forgot password?</button></div>
-          <button class="btn btn-primary btn-block" type="submit">Login to prototype <iconify-icon icon="lucide:arrow-right"></iconify-icon></button>
+          <button class="btn btn-primary btn-block" id="prototype-login-button" type="submit" disabled>Select a role to continue <iconify-icon icon="lucide:arrow-right"></iconify-icon></button>
         </form>
         <p class="auth-footer">New to GNG Fitness? <a href="signup.html">Create a prototype account</a></p>
         <p class="auth-footer"><a href="index.html"><iconify-icon icon="lucide:arrow-left"></iconify-icon> Back to landing page</a></p>
