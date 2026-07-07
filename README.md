@@ -1,6 +1,6 @@
 # GNG Fitness Member Hub Prototype
 
-A mobile-first HTML/CSS prototype for a gym website and member management system.
+A mobile-first HTML/Tailwind CSS prototype for a gym website and member management system.
 
 ## Included sections
 
@@ -16,7 +16,9 @@ A mobile-first HTML/CSS prototype for a gym website and member management system
 
 ## How to run
 
-Open `index.html` directly in your browser.
+Open `index.html` directly in your browser. The prototype loads Tailwind CSS v4 through the official browser package, so an internet connection is required for the Tailwind layout layer.
+
+For production, replace the browser package with the Tailwind CLI or another build-time integration.
 
 ## Suggested next step
 

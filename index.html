@@ -8,21 +8,22 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Oswald:wght@500;600;700&display=swap" rel="stylesheet" />
     <script src="https://code.iconify.design/iconify-icon/3.0.0/iconify-icon.min.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <link rel="stylesheet" href="styles.css" />
   </head>
-  <body>
+  <body class="min-h-screen overflow-x-hidden bg-[#1d1d1b]! text-[#f7f6ef]! antialiased">
     <header class="site-header">
-      <nav class="navbar container">
+      <nav class="navbar container max-w-[1440px]!" aria-label="Primary navigation">
         <a class="brand" href="#home" aria-label="GNG Fitness Home">
           <img class="brand-logo" src="assets/gng-logo.svg" alt="GNG Fitness" />
         </a>
 
-        <input type="checkbox" id="menu-toggle" class="menu-toggle" />
-        <label for="menu-toggle" class="menu-button" aria-label="Open menu">
-          <iconify-icon icon="lucide:menu" aria-hidden="true"></iconify-icon>
-        </label>
+        <button type="button" class="menu-button" aria-label="Toggle navigation" aria-controls="primary-menu" aria-expanded="false">
+          <iconify-icon class="menu-open-icon" icon="lucide:menu" aria-hidden="true"></iconify-icon>
+          <iconify-icon class="menu-close-icon" icon="lucide:x" aria-hidden="true"></iconify-icon>
+        </button>
 
-        <div class="nav-links">
+        <div class="nav-links" id="primary-menu">
           <a href="#plans">Plans</a>
           <a href="#trainers">Trainers</a>
           <a href="#booking">Booking</a>
@@ -33,7 +34,7 @@
     </header>
 
     <main id="home">
-      <section class="hero-section container">
+      <section class="hero-section container max-w-[1440px]! shadow-2xl! shadow-black/30!">
         <div class="hero-content">
           <p class="eyebrow">Your Strongest Self Starts Here</p>
           <h1>Built for <em>strength</em> <span>Made for you</span></h1>
@@ -78,39 +79,39 @@
         </div>
       </section>
 
-      <section class="section feature-section container">
-        <div class="section-heading">
+      <section class="section feature-section container max-w-[1440px]! py-16! md:py-24!">
+        <div class="section-heading mb-10! max-w-4xl! md:mb-14!">
           <p class="eyebrow">The GNG experience</p>
           <h2>One gym. One connected experience—from first visit to every new personal best.</h2>
         </div>
 
-        <div class="feature-grid">
-          <article class="feature-card">
+        <div class="feature-grid grid! grid-cols-1! gap-4! sm:grid-cols-2! xl:grid-cols-3!">
+          <article class="feature-card rounded-2xl! border-white/10! bg-[#2b2b29]! transition! duration-300! hover:-translate-y-1! hover:border-[#e5db13]/40!">
             <div class="icon-box"><iconify-icon icon="lucide:clipboard-pen-line" aria-hidden="true"></iconify-icon><span>01</span></div>
             <h3>Online Membership Inquiry</h3>
             <p>Collect leads from interested members with name, contact number, preferred plan, and fitness goal.</p>
           </article>
-          <article class="feature-card">
+          <article class="feature-card rounded-2xl! border-white/10! bg-[#2b2b29]! transition! duration-300! hover:-translate-y-1! hover:border-[#e5db13]/40!">
             <div class="icon-box"><iconify-icon icon="lucide:badge-dollar-sign" aria-hidden="true"></iconify-icon><span>02</span></div>
             <h3>Membership Plans</h3>
             <p>Show daily, monthly, student, premium, and personal training packages in a clear pricing section.</p>
           </article>
-          <article class="feature-card">
+          <article class="feature-card rounded-2xl! border-white/10! bg-[#2b2b29]! transition! duration-300! hover:-translate-y-1! hover:border-[#e5db13]/40!">
             <div class="icon-box"><iconify-icon icon="lucide:qr-code" aria-hidden="true"></iconify-icon><span>03</span></div>
             <h3>QR Check-In</h3>
             <p>Let members scan their QR code at the front desk so attendance is recorded automatically.</p>
           </article>
-          <article class="feature-card">
+          <article class="feature-card rounded-2xl! border-white/10! bg-[#2b2b29]! transition! duration-300! hover:-translate-y-1! hover:border-[#e5db13]/40!">
             <div class="icon-box"><iconify-icon icon="lucide:calendar-check-2" aria-hidden="true"></iconify-icon><span>04</span></div>
             <h3>Trainer Booking</h3>
             <p>Allow members to book personal training, boxing, strength coaching, or body transformation consultations.</p>
           </article>
-          <article class="feature-card">
+          <article class="feature-card rounded-2xl! border-white/10! bg-[#2b2b29]! transition! duration-300! hover:-translate-y-1! hover:border-[#e5db13]/40!">
             <div class="icon-box"><iconify-icon icon="lucide:bell-ring" aria-hidden="true"></iconify-icon><span>05</span></div>
             <h3>Renewal Reminders</h3>
             <p>Track membership expiry dates and remind members before their plan ends.</p>
           </article>
-          <article class="feature-card">
+          <article class="feature-card rounded-2xl! border-white/10! bg-[#2b2b29]! transition! duration-300! hover:-translate-y-1! hover:border-[#e5db13]/40!">
             <div class="icon-box"><iconify-icon icon="lucide:layout-dashboard" aria-hidden="true"></iconify-icon><span>06</span></div>
             <h3>Admin Dashboard</h3>
             <p>Manage inquiries, active members, check-ins, trainers, promos, and basic reports from one dashboard.</p>
@@ -119,8 +120,8 @@
       </section>
 
       <section id="plans" class="section pricing-section">
-        <div class="container">
-          <div class="section-heading center">
+        <div class="container max-w-[1440px]!">
+          <div class="section-heading center mb-10! md:mb-14!">
             <p class="eyebrow">Membership Plans</p>
             <h2>Flexible plans built around the way you train.</h2>
           </div>
@@ -134,8 +135,8 @@
             <small>Free drinking water included</small>
           </div>
 
-          <div class="pricing-grid rate-grid">
-            <article class="pricing-card featured-plan rate-card">
+          <div class="pricing-grid rate-grid grid! grid-cols-1! gap-4! md:grid-cols-2! xl:grid-cols-4!">
+            <article class="pricing-card featured-plan rate-card rounded-2xl! border-white/10! transition! duration-300! hover:-translate-y-1! hover:border-[#e5db13]/50!">
               <div class="rate-card-top">
                 <span class="rate-icon"><iconify-icon icon="lucide:user-check" aria-hidden="true"></iconify-icon></span>
                 <span class="rate-badge">Best value</span>
@@ -147,7 +148,7 @@
               <a href="#contact" class="btn btn-primary">Join as a member <iconify-icon icon="lucide:arrow-up-right" aria-hidden="true"></iconify-icon></a>
             </article>
 
-            <article class="pricing-card rate-card">
+            <article class="pricing-card rate-card rounded-2xl! border-white/10! transition! duration-300! hover:-translate-y-1! hover:border-[#e5db13]/50!">
               <div class="rate-card-top">
                 <span class="rate-icon"><iconify-icon icon="lucide:ticket-check" aria-hidden="true"></iconify-icon></span>
                 <span class="rate-badge">Flexible</span>
@@ -159,7 +160,7 @@
               <a href="#contact" class="btn btn-outline">Send an inquiry <iconify-icon icon="lucide:arrow-right" aria-hidden="true"></iconify-icon></a>
             </article>
 
-            <article class="pricing-card rate-card">
+            <article class="pricing-card rate-card rounded-2xl! border-white/10! transition! duration-300! hover:-translate-y-1! hover:border-[#e5db13]/50!">
               <div class="rate-card-top">
                 <span class="rate-icon"><iconify-icon icon="lucide:heart-handshake" aria-hidden="true"></iconify-icon></span>
                 <span class="rate-badge">Special rate</span>
@@ -171,7 +172,7 @@
               <a href="#contact" class="btn btn-outline">Ask about eligibility <iconify-icon icon="lucide:arrow-right" aria-hidden="true"></iconify-icon></a>
             </article>
 
-            <article class="pricing-card rate-card">
+            <article class="pricing-card rate-card rounded-2xl! border-white/10! transition! duration-300! hover:-translate-y-1! hover:border-[#e5db13]/50!">
               <div class="rate-card-top">
                 <span class="rate-icon"><iconify-icon icon="lucide:dumbbell" aria-hidden="true"></iconify-icon></span>
                 <span class="rate-badge">Coaching</span>
@@ -192,8 +193,8 @@
         </div>
       </section>
 
-      <section id="trainers" class="section container">
-        <div class="section-heading split">
+      <section id="trainers" class="section container max-w-[1440px]! py-16! md:py-24!">
+        <div class="section-heading split mb-10! md:mb-14!">
           <div>
             <p class="eyebrow">Coaches</p>
             <h2>Coaches who know when to push—and when to listen.</h2>
@@ -201,8 +202,8 @@
           <a href="#booking" class="btn btn-secondary">Book a Session <iconify-icon icon="lucide:arrow-right" aria-hidden="true"></iconify-icon></a>
         </div>
 
-        <div class="trainer-grid">
-          <article class="trainer-card">
+        <div class="trainer-grid grid! grid-cols-1! gap-4! lg:grid-cols-3!">
+          <article class="trainer-card rounded-2xl! border-white/10! shadow-xl! shadow-black/10!">
             <div class="trainer-photo trainer-1">
               <span class="trainer-index">01</span>
               <iconify-icon class="trainer-symbol" icon="lucide:dumbbell" aria-hidden="true"></iconify-icon>
@@ -215,7 +216,7 @@
               <div class="trainer-footer"><small>Form · Strength · Confidence</small><a href="#booking" aria-label="Book Coach Adrian">Book coach <iconify-icon icon="lucide:arrow-up-right" aria-hidden="true"></iconify-icon></a></div>
             </div>
           </article>
-          <article class="trainer-card">
+          <article class="trainer-card rounded-2xl! border-white/10! shadow-xl! shadow-black/10!">
             <div class="trainer-photo trainer-2">
               <span class="trainer-index">02</span>
               <iconify-icon class="trainer-symbol" icon="lucide:flame" aria-hidden="true"></iconify-icon>
@@ -228,7 +229,7 @@
               <div class="trainer-footer"><small>Fat loss · Habits · Progress</small><a href="#booking" aria-label="Book Coach Mika">Book coach <iconify-icon icon="lucide:arrow-up-right" aria-hidden="true"></iconify-icon></a></div>
             </div>
           </article>
-          <article class="trainer-card">
+          <article class="trainer-card rounded-2xl! border-white/10! shadow-xl! shadow-black/10!">
             <div class="trainer-photo trainer-3">
               <span class="trainer-index">03</span>
               <iconify-icon class="trainer-symbol" icon="lucide:zap" aria-hidden="true"></iconify-icon>
@@ -244,8 +245,8 @@
         </div>
       </section>
 
-      <section id="booking" class="section booking-section">
-        <div class="container booking-layout">
+      <section id="booking" class="section booking-section py-16! md:py-24!">
+        <div class="container booking-layout grid! max-w-[1280px]! grid-cols-1! gap-8! lg:grid-cols-[1.05fr_.95fr]! lg:gap-14!">
           <div>
             <p class="eyebrow">Booking</p>
             <h2>Book your next coaching session in a few quick steps.</h2>
@@ -261,7 +262,11 @@
             </div>
           </div>
 
-          <form class="booking-form">
+          <form class="booking-form rounded-2xl! border! border-white/10! bg-[#2b2b29]! shadow-2xl! shadow-black/20!">
+            <div class="booking-form-heading">
+              <span><iconify-icon icon="lucide:calendar-clock" aria-hidden="true"></iconify-icon></span>
+              <div><small>Session request</small><strong>Choose your training</strong></div>
+            </div>
             <label>
               Full Name
               <input type="text" placeholder="Juan Dela Cruz" />
@@ -288,14 +293,14 @@
         </div>
       </section>
 
-      <section id="dashboard" class="section container dashboard-section">
-        <div class="section-heading center">
+      <section id="dashboard" class="section container dashboard-section max-w-[1440px]! py-16! md:py-24!">
+        <div class="section-heading center mb-10! md:mb-14!">
           <p class="eyebrow">Admin + Member Dashboard</p>
           <h2>Your membership, progress, and gym access in one place.</h2>
         </div>
 
-        <div class="dashboard-shell">
-          <aside class="sidebar-preview">
+        <div class="dashboard-shell overflow-hidden! rounded-2xl! border! border-white/10! shadow-2xl! shadow-black/25!">
+          <aside class="sidebar-preview" aria-label="Dashboard navigation">
             <img class="sidebar-logo" src="assets/gng-logo.svg" alt="GNG Fitness" />
             <a class="active" href="#dashboard"><iconify-icon icon="lucide:layout-dashboard" aria-hidden="true"></iconify-icon>Overview</a>
             <a href="#dashboard"><iconify-icon icon="lucide:users" aria-hidden="true"></iconify-icon>Members</a>
@@ -310,7 +315,7 @@
                 <span>Today</span>
                 <h3>Gym Operations</h3>
               </div>
-              <button type="button"><iconify-icon icon="lucide:download" aria-hidden="true"></iconify-icon> Export Report</button>
+              <button type="button" aria-label="Export report"><iconify-icon icon="lucide:download" aria-hidden="true"></iconify-icon><span>Export Report</span></button>
             </div>
 
             <div class="metric-grid">
@@ -365,8 +370,8 @@
         </div>
       </section>
 
-      <section class="section promo-section">
-        <div class="container promo-card">
+      <section class="section promo-section py-10! md:py-16!">
+        <div class="container promo-card grid! max-w-[1180px]! grid-cols-1! gap-6! rounded-2xl! lg:grid-cols-[1fr_320px]!">
           <div>
             <p class="eyebrow">Promo System</p>
             <h2>Referral promos can turn members into your sales team.</h2>
@@ -383,8 +388,8 @@
         </div>
       </section>
 
-      <section id="contact" class="section contact-section container">
-        <div class="contact-card">
+      <section id="contact" class="section contact-section container max-w-[1280px]! py-16! md:py-24!">
+        <div class="contact-card grid! grid-cols-1! overflow-hidden! rounded-2xl! border! border-white/10! shadow-2xl! shadow-black/20! lg:grid-cols-[.9fr_1.1fr]!">
           <div class="contact-copy">
             <p class="eyebrow">Join Now</p>
             <h2>Ready to start training with us?</h2>
@@ -432,13 +437,13 @@
         </div>
       </section>
 
-      <section class="section faq-section container">
-        <div class="section-heading center">
+      <section class="section faq-section container max-w-[1280px]! py-16! md:py-24!">
+        <div class="section-heading center mb-10! md:mb-14!">
           <p class="eyebrow">FAQ</p>
           <h2>Common questions answered before customers message the gym.</h2>
         </div>
 
-        <div class="faq-grid">
+        <div class="faq-grid grid! grid-cols-1! gap-3! lg:grid-cols-2!">
           <details open>
             <summary><span><small>01</small>Do you accept beginners?</span><iconify-icon icon="lucide:chevron-down" aria-hidden="true"></iconify-icon></summary>
             <p>Yes. The gym can offer beginner assessment and trainer guidance for first-time members.</p>
@@ -465,5 +470,29 @@
         <a href="#home">Back to top <iconify-icon icon="lucide:arrow-up" aria-hidden="true"></iconify-icon></a>
       </div>
     </footer>
+    <script>
+      const menuButton = document.querySelector(".menu-button");
+      const primaryMenu = document.querySelector("#primary-menu");
+
+      const setMenuOpen = (isOpen) => menuButton.setAttribute("aria-expanded", String(isOpen));
+
+      menuButton.addEventListener("click", () => {
+        setMenuOpen(menuButton.getAttribute("aria-expanded") !== "true");
+      });
+
+      primaryMenu.addEventListener("click", (event) => {
+        if (event.target.closest("a")) setMenuOpen(false);
+      });
+
+      document.addEventListener("keydown", (event) => {
+        if (event.key === "Escape") setMenuOpen(false);
+      });
+
+      const siteHeader = document.querySelector(".site-header");
+      const syncHeaderState = () => siteHeader.classList.toggle("is-scrolled", window.scrollY > 24);
+
+      syncHeaderState();
+      window.addEventListener("scroll", syncHeaderState, { passive: true });
+    </script>
   </body>
 </html>
