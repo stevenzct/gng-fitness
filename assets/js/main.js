@@ -2,6 +2,68 @@
   const $ = (selector, root = document) => root.querySelector(selector);
   const $$ = (selector, root = document) => [...root.querySelectorAll(selector)];
 
+  // Give native selects an on-brand shell without replacing their accessible behavior.
+  const selectClasses = [
+    "peer", "!min-h-11", "!appearance-none", "cursor-pointer", "!rounded-lg",
+    "!border", "!px-3.5", "!pr-12", "!text-xs", "!font-semibold", "!shadow-none",
+    "transition", "duration-200", "hover:!border-yellow-500", "focus:!border-yellow-600",
+    "focus:!ring-4", "focus:!ring-yellow-400/15", "disabled:cursor-not-allowed", "disabled:opacity-60"
+  ];
+  const dashboardSelectClasses = ["!border-zinc-300", "!bg-[#f7f7f2]", "!text-zinc-800", "hover:!bg-white"];
+  const authSelectClasses = ["!border-black/10", "!bg-[#f4f4ee]", "!text-[#151513]", "hover:!bg-[#f4f4ee]"];
+  const darkSelectClasses = ["!border-zinc-700", "!bg-zinc-900/90", "!text-zinc-100", "hover:!bg-zinc-800"];
+
+  $$("select").forEach(select => {
+    if (select.closest(".select-shell")) return;
+    const shell = document.createElement("div");
+    shell.className = select.closest(".toolbar")
+      ? "select-shell relative w-[230px] max-w-full min-w-[180px]"
+      : "select-shell relative w-full";
+
+    select.before(shell);
+    shell.appendChild(select);
+    select.classList.add(...selectClasses);
+    const themeClasses = select.closest(".auth-box")
+      ? authSelectClasses
+      : document.body.classList.contains("dashboard-body")
+        ? dashboardSelectClasses
+        : darkSelectClasses;
+    select.classList.add(...themeClasses);
+
+    const indicator = document.createElement("span");
+    indicator.className = "pointer-events-none absolute right-3 top-1/2 grid h-5 w-5 -translate-y-1/2 place-items-center text-zinc-500 transition duration-200 peer-hover:text-zinc-700 peer-focus:text-yellow-700";
+    indicator.setAttribute("aria-hidden", "true");
+    indicator.innerHTML = '<iconify-icon icon="lucide:chevron-down" class="text-base"></iconify-icon>';
+    shell.appendChild(indicator);
+  });
+
+  // Apply consistent semantic colors to common dashboard record actions.
+  if (document.body.classList.contains("dashboard-body")) {
+    const recordActions = new Map([
+      ["view", "action-view"],
+      ["edit", "action-edit"],
+      ["delete", "action-delete"],
+      ["approve", "action-approve"],
+      ["reject", "action-reject"]
+    ]);
+    $$('button').forEach(button => {
+      const actionClass = recordActions.get(button.textContent.trim().toLowerCase());
+      if (actionClass) button.classList.add("record-action", actionClass);
+    });
+
+    // Pair every mobile table value with its heading so rows can become
+    // readable record cards instead of requiring horizontal scrolling.
+    $$(".data-table").forEach(table => {
+      const headings = $$("thead th", table).map(heading => heading.textContent.trim());
+      $$("tbody tr", table).forEach(row => {
+        [...row.cells].forEach((cell, index) => {
+          cell.dataset.label = headings[index] || "Detail";
+        });
+      });
+      table.classList.add("mobile-card-table");
+    });
+  }
+
   const toast = (title, message = "This action is simulated for the frontend prototype.") => {
     let el = $(".toast");
     if (!el) {
@@ -83,6 +145,29 @@
     });
     document.addEventListener("click", event => {
       if (!aboutDropdown.contains(event.target)) closeAboutDropdown();
+    });
+  }
+
+  const pricingSwiper = $(".pricing-swiper");
+  if (pricingSwiper && window.Swiper) {
+    new window.Swiper(pricingSwiper, {
+      slidesPerView: 1.08,
+      spaceBetween: 14,
+      grabCursor: true,
+      watchOverflow: true,
+      keyboard: { enabled: true },
+      pagination: {
+        el: ".pricing-swiper-pagination",
+        clickable: true
+      },
+      navigation: {
+        prevEl: ".pricing-swiper-prev",
+        nextEl: ".pricing-swiper-next"
+      },
+      breakpoints: {
+        620: { slidesPerView: 2, spaceBetween: 16 },
+        1024: { slidesPerView: 3, spaceBetween: 18 }
+      }
     });
   }
 

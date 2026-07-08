@@ -5,8 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="GNG Fitness gym website and management system prototype.">
   <title>GNG Fitness | Stronger Starts Here</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
   <link rel="stylesheet" href="assets/css/style.css">
   <script src="https://code.iconify.design/iconify-icon/3.0.0/iconify-icon.min.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js" defer></script>
   <script src="assets/js/main.js" defer></script>
 </head>
 <body class="landing-page">
@@ -81,12 +83,22 @@
 
     <section class="section" id="pricing">
       <div class="container">
-        <div class="section-head center"><p class="eyebrow">Membership pricing</p><h2>Choose how you want to train</h2><p class="lead" style="margin-top:15px">Straightforward sample plans for the prototype presentation.</p></div>
-        <div class="card-grid">
-          <article class="card price-card hover"><span class="plan-tag">Flexible access</span><h3 style="margin-top:18px">Walk-in Pass</h3><div class="price">₱150 <small>/ visit</small></div><ul class="check-list"><li>Full gym access</li><li>Locker use</li><li>Free drinking water</li><li>Valid for one day</li></ul><a class="btn btn-secondary" href="signup.html">Get a pass</a></article>
-          <article class="card price-card featured hover"><span class="plan-tag">Most popular</span><h3 style="margin-top:18px">Monthly Membership</h3><div class="price">₱900 <small>/ month</small></div><ul class="check-list"><li>Unlimited gym access</li><li>Digital member profile</li><li>QR attendance tracking</li><li>Basic body assessment</li></ul><a class="btn btn-primary" href="signup.html">Start membership</a></article>
-          <article class="card price-card hover"><span class="plan-tag">Guided results</span><h3 style="margin-top:18px">Personal Coaching</h3><div class="price">₱4,000 <small>/ 16 sessions</small></div><ul class="check-list"><li>Assigned personal coach</li><li>Custom workout plan</li><li>Progress assessments</li><li>Session scheduling</li></ul><a class="btn btn-secondary" href="signup.html">Train with a coach</a></article>
+        <div class="section-head center"><p class="eyebrow">Membership pricing</p><h2>Choose how you want to train</h2><p class="lead" style="margin-top:15px">Official GNG Fitness access and personal training rates.</p></div>
+        <div class="swiper pricing-swiper" aria-label="GNG Fitness membership rates">
+          <div class="swiper-wrapper">
+            <article class="swiper-slide card price-card hover"><span class="plan-tag">Required yearly</span><h3 style="margin-top:18px">Annual Membership Fee</h3><div class="price">₱400 <small>/ year</small></div><ul class="check-list"><li>Annual GNG membership fee</li><li>Separate from gym access rates</li><li>Free drinking water</li><li>Valid for one year</li></ul><a class="btn btn-secondary" href="signup.html">Become a member</a></article>
+            <article class="swiper-slide card price-card featured hover"><span class="plan-tag">Member rate</span><h3 style="margin-top:18px">Member Access</h3><div class="price">₱900 <small>/ month</small></div><ul class="check-list"><li>₱130 per session</li><li>One-month gym access option</li><li>Free drinking water</li><li>For active GNG members</li></ul><a class="btn btn-primary" href="signup.html">Start membership</a></article>
+            <article class="swiper-slide card price-card hover"><span class="plan-tag">Flexible access</span><h3 style="margin-top:18px">Non-member Access</h3><div class="price">₱1,200 <small>/ month</small></div><ul class="check-list"><li>₱150 per session</li><li>One-month gym access option</li><li>Free drinking water</li><li>No annual membership required</li></ul><a class="btn btn-secondary" href="signup.html">Train with us</a></article>
+            <article class="swiper-slide card price-card hover"><span class="plan-tag">Discounted rate</span><h3 style="margin-top:18px">Student · PWD · Senior</h3><div class="price">₱800 <small>/ month</small></div><ul class="check-list"><li>₱120 per session</li><li>One-month gym access option</li><li>Free drinking water</li><li>Discounted access rate</li></ul><a class="btn btn-secondary" href="signup.html">Get discounted access</a></article>
+            <article class="swiper-slide card price-card hover"><span class="plan-tag">With trainer</span><h3 style="margin-top:18px">Personal Training</h3><div class="price">₱400 <small>/ session</small></div><ul class="check-list"><li>₱4,000 for 16 sessions</li><li>Personal trainer included</li><li>Session-based coaching</li><li>Free drinking water</li></ul><a class="btn btn-secondary" href="signup.html">Train with a coach</a></article>
+          </div>
+          <div class="pricing-swiper-controls">
+            <button class="pricing-swiper-prev" type="button" aria-label="Previous pricing plan"><iconify-icon icon="lucide:arrow-left"></iconify-icon></button>
+            <div class="pricing-swiper-pagination" aria-label="Pricing carousel pages"></div>
+            <button class="pricing-swiper-next" type="button" aria-label="Next pricing plan"><iconify-icon icon="lucide:arrow-right"></iconify-icon></button>
+          </div>
         </div>
+        <p class="small muted" style="margin-top:20px;text-align:center">All rates are non-refundable and non-transferable. Open Monday–Sunday, 6:00 AM–10:00 PM.</p>
       </div>
     </section>
 

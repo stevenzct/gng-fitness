@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Super Admin Dashboard | GNG Fitness Prototype</title>
-  <link rel="stylesheet" href="assets/css/style.css"><script src="https://code.iconify.design/iconify-icon/3.0.0/iconify-icon.min.js" defer></script><script src="assets/js/main.js" defer></script>
+  <link rel="stylesheet" href="assets/css/style.css"><script src="https://cdn.tailwindcss.com"></script><script>tailwind.config={corePlugins:{preflight:false}}</script><script src="https://code.iconify.design/iconify-icon/3.0.0/iconify-icon.min.js" defer></script><script src="assets/js/main.js" defer></script>
 </head>
 <body class="dashboard-body">
   <div class="dashboard-layout">
@@ -86,7 +86,32 @@
 
         <section class="tab-panel" data-panel="branches">
           <div class="page-intro"><div><p class="eyebrow">Location CMS</p><h2>Branches</h2><p>Manage gym locations and public branch details.</p></div><button class="btn btn-primary" data-demo-action="Add branch form opened">+ Add Branch</button></div>
-          <div class="card-grid"><article class="card"><span class="badge success">Open</span><h3 style="margin-top:18px">Antipolo Main Branch</h3><div class="detail-list" style="margin-top:14px"><div class="detail-row"><span>Address</span><strong>BSR Bldg, M.L. Quezon Extension, Zapanta Compound, Antipolo 1870</strong></div><div class="detail-row"><span>Contact</span><strong>09XX XXX XXXX</strong></div><div class="detail-row"><span>Hours</span><strong>6:00 AM–10:00 PM</strong></div><div class="detail-row"><span>Google Maps</span><strong class="accent">Official location link</strong></div></div><div class="upload-box" style="margin-top:14px">Branch image placeholders</div><div class="cluster" style="margin-top:14px"><button class="btn btn-sm btn-secondary" data-demo-action="Branch edit opened">Edit</button><button class="btn btn-sm btn-danger" data-demo-action="Branch delete confirmation opened">Delete</button></div></article><article class="card"><span class="badge warning">Draft</span><h3 style="margin-top:18px">Future Branch</h3><div class="detail-list" style="margin-top:14px"><div class="detail-row"><span>Address</span><strong>To be announced</strong></div><div class="detail-row"><span>Contact</span><strong>To be announced</strong></div><div class="detail-row"><span>Hours</span><strong>To be announced</strong></div></div><div class="upload-box" style="margin-top:14px">Branch image placeholders</div><div class="cluster" style="margin-top:14px"><button class="btn btn-sm btn-secondary" data-demo-action="Branch edit opened">Edit</button><button class="btn btn-sm btn-danger" data-demo-action="Branch delete confirmation opened">Delete</button></div></article></div>
+          <div class="card-grid branch-grid">
+            <article class="card branch-card">
+              <div class="branch-card-head"><span class="branch-card-icon"><iconify-icon icon="lucide:building-2"></iconify-icon></span><span class="badge success">Open</span></div>
+              <div class="branch-card-title"><p>Main location</p><h3>Antipolo Main Branch</h3></div>
+              <div class="detail-list branch-card-details">
+                <div class="detail-row"><span>Address</span><strong>BSR Bldg, M.L. Quezon Extension, Zapanta Compound, Antipolo 1870</strong></div>
+                <div class="detail-row"><span>Contact</span><strong>09XX XXX XXXX</strong></div>
+                <div class="detail-row"><span>Operating hours</span><strong>6:00 AM–10:00 PM</strong></div>
+                <div class="detail-row"><span>Google Maps</span><strong class="branch-map-link"><iconify-icon icon="lucide:map-pin"></iconify-icon>Official location link</strong></div>
+              </div>
+              <div class="branch-media"><iconify-icon icon="lucide:image"></iconify-icon><span><strong>Branch media</strong><small>Image placeholders</small></span></div>
+              <div class="cluster branch-actions"><button class="btn btn-sm btn-secondary" data-demo-action="Branch edit opened">Edit</button><button class="btn btn-sm btn-danger" data-demo-action="Branch delete confirmation opened">Delete</button></div>
+            </article>
+            <article class="card branch-card">
+              <div class="branch-card-head"><span class="branch-card-icon"><iconify-icon icon="lucide:building-2"></iconify-icon></span><span class="badge warning">Draft</span></div>
+              <div class="branch-card-title"><p>Planned location</p><h3>Future Branch</h3></div>
+              <div class="detail-list branch-card-details">
+                <div class="detail-row"><span>Address</span><strong>To be announced</strong></div>
+                <div class="detail-row"><span>Contact</span><strong>To be announced</strong></div>
+                <div class="detail-row"><span>Operating hours</span><strong>To be announced</strong></div>
+                <div class="detail-row"><span>Google Maps</span><strong class="muted">Not configured</strong></div>
+              </div>
+              <div class="branch-media"><iconify-icon icon="lucide:image"></iconify-icon><span><strong>Branch media</strong><small>Image placeholders</small></span></div>
+              <div class="cluster branch-actions"><button class="btn btn-sm btn-secondary" data-demo-action="Branch edit opened">Edit</button><button class="btn btn-sm btn-danger" data-demo-action="Branch delete confirmation opened">Delete</button></div>
+            </article>
+          </div>
         </section>
 
         <section class="tab-panel" data-panel="cms">
@@ -101,8 +126,8 @@
         </section>
 
         <section class="tab-panel" data-panel="pricing">
-          <div class="page-intro"><div><p class="eyebrow">Public plans</p><h2>Pricing</h2><p>Edit sample membership and coaching plans.</p></div><button class="btn btn-primary" data-demo-action="Pricing plan form opened">+ Add Plan</button></div>
-          <article class="panel"><div class="table-wrap"><table class="data-table"><thead><tr><th>Plan name</th><th>Price</th><th>Duration</th><th>Features</th><th>Status</th><th>Action</th></tr></thead><tbody><tr><td>Walk-in Pass</td><td>₱150</td><td>1 day</td><td>Gym access, locker, water</td><td><span class="badge success">Visible</span></td><td><button class="btn btn-sm btn-secondary" data-demo-action="Pricing edit opened">Edit</button></td></tr><tr><td>Monthly Membership</td><td>₱900</td><td>30 days</td><td>Unlimited access, QR, assessment</td><td><span class="badge success">Visible</span></td><td><button class="btn btn-sm btn-secondary" data-demo-action="Pricing edit opened">Edit</button></td></tr><tr><td>Personal Coaching</td><td>₱4,000</td><td>16 sessions</td><td>Coach, custom plan, assessments</td><td><span class="badge success">Visible</span></td><td><button class="btn btn-sm btn-secondary" data-demo-action="Pricing edit opened">Edit</button></td></tr></tbody></table></div></article>
+          <div class="page-intro"><div><p class="eyebrow">Public plans</p><h2>Pricing</h2><p>Manage current membership, access, and personal training rates.</p></div><button class="btn btn-primary" data-demo-action="Pricing plan form opened">+ Add Plan</button></div>
+          <article class="panel"><div class="table-wrap"><table class="data-table"><thead><tr><th>Plan name</th><th>Price</th><th>Duration</th><th>Features</th><th>Status</th><th>Action</th></tr></thead><tbody><tr><td>Annual Membership Fee</td><td>₱400</td><td>1 year</td><td>Required annual membership fee</td><td><span class="badge success">Visible</span></td><td><button class="btn btn-sm btn-secondary" data-demo-action="Pricing edit opened">Edit</button></td></tr><tr><td>Member Monthly Access</td><td>₱900</td><td>1 month</td><td>Gym access, free water</td><td><span class="badge success">Visible</span></td><td><button class="btn btn-sm btn-secondary" data-demo-action="Pricing edit opened">Edit</button></td></tr><tr><td>Member Session</td><td>₱130</td><td>Per session</td><td>Gym access, free water</td><td><span class="badge success">Visible</span></td><td><button class="btn btn-sm btn-secondary" data-demo-action="Pricing edit opened">Edit</button></td></tr><tr><td>Non-member Monthly Access</td><td>₱1,200</td><td>1 month</td><td>Gym access, free water</td><td><span class="badge success">Visible</span></td><td><button class="btn btn-sm btn-secondary" data-demo-action="Pricing edit opened">Edit</button></td></tr><tr><td>Non-member Session</td><td>₱150</td><td>Per session</td><td>Gym access, free water</td><td><span class="badge success">Visible</span></td><td><button class="btn btn-sm btn-secondary" data-demo-action="Pricing edit opened">Edit</button></td></tr><tr><td>Student / PWD / Senior Monthly</td><td>₱800</td><td>1 month</td><td>Discounted gym access, free water</td><td><span class="badge success">Visible</span></td><td><button class="btn btn-sm btn-secondary" data-demo-action="Pricing edit opened">Edit</button></td></tr><tr><td>Student / PWD / Senior Session</td><td>₱120</td><td>Per session</td><td>Discounted gym access, free water</td><td><span class="badge success">Visible</span></td><td><button class="btn btn-sm btn-secondary" data-demo-action="Pricing edit opened">Edit</button></td></tr><tr><td>Personal Training Session</td><td>₱400</td><td>Per session</td><td>Personal trainer included</td><td><span class="badge success">Visible</span></td><td><button class="btn btn-sm btn-secondary" data-demo-action="Pricing edit opened">Edit</button></td></tr><tr><td>Personal Training Package</td><td>₱4,000</td><td>16 sessions</td><td>Personal trainer included</td><td><span class="badge success">Visible</span></td><td><button class="btn btn-sm btn-secondary" data-demo-action="Pricing edit opened">Edit</button></td></tr></tbody></table></div></article>
         </section>
 
         <section class="tab-panel" data-panel="rewards">
@@ -113,7 +138,33 @@
 
         <section class="tab-panel" data-panel="reports">
           <div class="page-intro"><div><p class="eyebrow">Business intelligence</p><h2>Reports</h2><p>High-level analytics with prototype export controls.</p></div><div class="cluster"><button class="btn btn-secondary" data-demo-action="PDF export prepared"><iconify-icon icon="lucide:file-text"></iconify-icon>Export PDF</button><button class="btn btn-primary" data-demo-action="Excel export prepared"><iconify-icon icon="lucide:sheet"></iconify-icon>Export Excel</button></div></div>
-          <div class="card-grid"><article class="card hover"><div class="feature-icon"><iconify-icon icon="lucide:badge-dollar-sign"></iconify-icon></div><h3>Revenue Report</h3><p>Monthly revenue, plan mix, and outstanding balances.</p></article><article class="card hover"><div class="feature-icon"><iconify-icon icon="lucide:calendar-check-2"></iconify-icon></div><h3>Attendance Report</h3><p>Visits, peak hours, branch traffic, and consistency.</p></article><article class="card hover"><div class="feature-icon"><iconify-icon icon="lucide:badge-check"></iconify-icon></div><h3>Active vs Expired</h3><p>Subscription health and renewal opportunities.</p></article><article class="card hover"><div class="feature-icon"><iconify-icon icon="lucide:users"></iconify-icon></div><h3>Coach Performance</h3><p>Assignments, sessions, retention, and client progress.</p></article><article class="card hover"><div class="feature-icon"><iconify-icon icon="lucide:gift"></iconify-icon></div><h3>Referral Performance</h3><p>Codes, conversion, points, and reward cost.</p></article></div>
+          <div class="card-grid reports-grid admin-reports-grid">
+            <article class="card report-card admin-report-card">
+              <div class="report-card-head"><span class="report-card-icon"><iconify-icon icon="lucide:badge-dollar-sign"></iconify-icon></span><span class="badge neutral">Financial</span></div>
+              <div class="report-card-copy"><h3>Revenue Report</h3><p>Understand monthly income, membership plan mix, and balances still awaiting payment.</p></div>
+              <div class="report-card-includes"><span>Includes</span><strong>Revenue · Plan mix · Balances</strong></div>
+            </article>
+            <article class="card report-card admin-report-card">
+              <div class="report-card-head"><span class="report-card-icon"><iconify-icon icon="lucide:calendar-check-2"></iconify-icon></span><span class="badge neutral">Operations</span></div>
+              <div class="report-card-copy"><h3>Attendance Report</h3><p>Review gym visits, peak training hours, branch traffic, and member consistency.</p></div>
+              <div class="report-card-includes"><span>Includes</span><strong>Visits · Peak hours · Branches</strong></div>
+            </article>
+            <article class="card report-card admin-report-card">
+              <div class="report-card-head"><span class="report-card-icon"><iconify-icon icon="lucide:badge-check"></iconify-icon></span><span class="badge neutral">Membership</span></div>
+              <div class="report-card-copy"><h3>Active vs Expired</h3><p>See subscription health clearly and identify the strongest renewal opportunities.</p></div>
+              <div class="report-card-includes"><span>Includes</span><strong>Status · Expirations · Renewals</strong></div>
+            </article>
+            <article class="card report-card admin-report-card">
+              <div class="report-card-head"><span class="report-card-icon"><iconify-icon icon="lucide:users"></iconify-icon></span><span class="badge neutral">Coaching</span></div>
+              <div class="report-card-copy"><h3>Coach Performance</h3><p>Compare assignments, delivered sessions, retention, and member progress by coach.</p></div>
+              <div class="report-card-includes"><span>Includes</span><strong>Sessions · Retention · Progress</strong></div>
+            </article>
+            <article class="card report-card admin-report-card">
+              <div class="report-card-head"><span class="report-card-icon"><iconify-icon icon="lucide:gift"></iconify-icon></span><span class="badge neutral">Growth</span></div>
+              <div class="report-card-copy"><h3>Referral Performance</h3><p>Track referral-code use, successful conversions, points issued, and reward cost.</p></div>
+              <div class="report-card-includes"><span>Includes</span><strong>Conversions · Points · Reward cost</strong></div>
+            </article>
+          </div>
           <div class="dashboard-grid"><article class="panel"><div class="panel-head"><h3>Revenue trend</h3><span class="badge success">+8.4%</span></div><div class="chart"><div class="bar" style="height:45%" data-label="Feb"></div><div class="bar" style="height:54%" data-label="Mar"></div><div class="bar" style="height:60%" data-label="Apr"></div><div class="bar" style="height:71%" data-label="May"></div><div class="bar" style="height:76%" data-label="Jun"></div><div class="bar" style="height:88%" data-label="Jul"></div></div></article><article class="panel"><div class="panel-head"><h3>Membership mix</h3></div><div class="progress-list"><div class="progress-item"><div class="progress-meta"><span>Monthly</span><strong>62%</strong></div><div class="progress-track"><span style="width:62%"></span></div></div><div class="progress-item"><div class="progress-meta"><span>Student / Senior</span><strong>24%</strong></div><div class="progress-track"><span style="width:24%"></span></div></div><div class="progress-item"><div class="progress-meta"><span>Coaching packages</span><strong>14%</strong></div><div class="progress-track"><span style="width:14%"></span></div></div></div></article></div>
         </section>
 

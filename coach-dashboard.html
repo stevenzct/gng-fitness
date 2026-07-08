@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Coach Dashboard | GNG Fitness Prototype</title>
-  <link rel="stylesheet" href="assets/css/style.css"><script src="https://code.iconify.design/iconify-icon/3.0.0/iconify-icon.min.js" defer></script><script src="assets/js/main.js" defer></script>
+  <link rel="stylesheet" href="assets/css/style.css"><script src="https://cdn.tailwindcss.com"></script><script>tailwind.config={corePlugins:{preflight:false}}</script><script src="https://code.iconify.design/iconify-icon/3.0.0/iconify-icon.min.js" defer></script><script src="assets/js/main.js" defer></script>
 </head>
 <body class="dashboard-body">
   <div class="dashboard-layout">
@@ -64,9 +64,20 @@
         </section>
 
         <section class="tab-panel" data-panel="schedule">
-          <div class="page-intro"><div><p class="eyebrow">Calendar</p><h2>Coaching Schedule</h2><p>July 7–13, 2026</p></div><button class="btn btn-primary" data-demo-action="New coaching session opened">Add session</button></div>
-          <article class="panel"><div class="calendar-grid"><div class="calendar-day"><b>Mon 6</b><span>2 completed</span></div><div class="calendar-day has-event"><b>Tue 7</b><span>3:00 Mika</span><span>4:30 Arvin</span><span>6:30 Juan</span></div><div class="calendar-day has-event"><b>Wed 8</b><span>7:00 Liza</span></div><div class="calendar-day has-event"><b>Thu 9</b><span>6:30 Juan</span></div><div class="calendar-day"><b>Fri 10</b><span>Rest day</span></div><div class="calendar-day has-event"><b>Sat 11</b><span>8:00 Group class</span></div><div class="calendar-day"><b>Sun 12</b><span>Open</span></div></div></article>
-          <article class="panel" style="margin-top:14px"><div class="table-wrap"><table class="data-table"><thead><tr><th>Member</th><th>Date</th><th>Time</th><th>Session type</th><th>Status</th></tr></thead><tbody><tr><td>Mika Reyes</td><td>Jul 07</td><td>3:00 PM</td><td>Transformation</td><td><span class="badge info">Scheduled</span></td></tr><tr><td>Arvin Lopez</td><td>Jul 07</td><td>4:30 PM</td><td>Strength</td><td><span class="badge info">Scheduled</span></td></tr><tr><td>Rico Tan</td><td>Jul 06</td><td>6:00 PM</td><td>Assessment</td><td><span class="badge danger">Missed</span></td></tr><tr><td>Ana Lim</td><td>Jul 05</td><td>9:00 AM</td><td>Fat Loss</td><td><span class="badge success">Completed</span></td></tr></tbody></table></div></article>
+          <div class="page-intro"><div><p class="eyebrow">Calendar</p><h2>Coaching Schedule</h2><p>July 6–12, 2026</p></div><button class="btn btn-primary" data-demo-action="New coaching session opened">Add session</button></div>
+          <article class="panel schedule-calendar">
+            <div class="schedule-calendar-head"><div><h3>Weekly agenda</h3><p>Sessions scheduled for this week</p></div><div class="schedule-legend"><span><i class="legend-dot today"></i>Today</span><span><i class="legend-dot scheduled"></i>Scheduled</span></div></div>
+            <div class="calendar-grid schedule-grid">
+              <div class="calendar-day schedule-day is-complete"><div class="schedule-day-head"><span>Monday</span><b>6</b></div><div class="schedule-day-state"><iconify-icon icon="lucide:circle-check"></iconify-icon><strong>2 completed</strong></div></div>
+              <div class="calendar-day schedule-day has-event is-today"><div class="schedule-day-head"><span>Tuesday</span><b>7</b><em>Today</em></div><div class="schedule-events"><div class="schedule-event"><time>3:00 PM</time><strong>Mika</strong></div><div class="schedule-event"><time>4:30 PM</time><strong>Arvin</strong></div><div class="schedule-event"><time>6:30 PM</time><strong>Juan</strong></div></div></div>
+              <div class="calendar-day schedule-day has-event"><div class="schedule-day-head"><span>Wednesday</span><b>8</b></div><div class="schedule-events"><div class="schedule-event"><time>7:00 PM</time><strong>Liza</strong></div></div></div>
+              <div class="calendar-day schedule-day has-event"><div class="schedule-day-head"><span>Thursday</span><b>9</b></div><div class="schedule-events"><div class="schedule-event"><time>6:30 PM</time><strong>Juan</strong></div></div></div>
+              <div class="calendar-day schedule-day is-quiet"><div class="schedule-day-head"><span>Friday</span><b>10</b></div><div class="schedule-day-state"><iconify-icon icon="lucide:moon"></iconify-icon><strong>Rest day</strong></div></div>
+              <div class="calendar-day schedule-day has-event"><div class="schedule-day-head"><span>Saturday</span><b>11</b></div><div class="schedule-events"><div class="schedule-event"><time>8:00 AM</time><strong>Group class</strong></div></div></div>
+              <div class="calendar-day schedule-day is-quiet"><div class="schedule-day-head"><span>Sunday</span><b>12</b></div><div class="schedule-day-state"><iconify-icon icon="lucide:calendar-clock"></iconify-icon><strong>Open</strong></div></div>
+            </div>
+          </article>
+          <article class="panel schedule-list"><div class="panel-head"><div><h3>Session list</h3><p>Scheduled and recent coaching activity</p></div><span class="badge neutral">4 records</span></div><div class="table-wrap"><table class="data-table"><thead><tr><th>Member</th><th>Date</th><th>Time</th><th>Session type</th><th>Status</th></tr></thead><tbody><tr><td>Mika Reyes</td><td>Jul 07</td><td>3:00 PM</td><td>Transformation</td><td><span class="badge info">Scheduled</span></td></tr><tr><td>Arvin Lopez</td><td>Jul 07</td><td>4:30 PM</td><td>Strength</td><td><span class="badge info">Scheduled</span></td></tr><tr><td>Rico Tan</td><td>Jul 06</td><td>6:00 PM</td><td>Assessment</td><td><span class="badge danger">Missed</span></td></tr><tr><td>Ana Lim</td><td>Jul 05</td><td>9:00 AM</td><td>Fat Loss</td><td><span class="badge success">Completed</span></td></tr></tbody></table></div></article>
         </section>
 
         <section class="tab-panel" data-panel="payments">
@@ -77,7 +88,32 @@
 
         <section class="tab-panel" data-panel="reports">
           <div class="page-intro"><div><p class="eyebrow">Insights</p><h2>Reports</h2><p>Coach-facing summaries ready for mock export.</p></div></div>
-          <div class="card-grid"><article class="card hover"><div class="feature-icon"><iconify-icon icon="lucide:chart-no-axes-combined"></iconify-icon></div><h3>Member Progress</h3><p>Weight, measurement, and workout completion summaries.</p><button class="btn btn-secondary btn-sm" style="margin-top:18px" data-demo-action="Member progress report generated"><iconify-icon icon="lucide:file-chart-column"></iconify-icon>Generate</button></article><article class="card hover"><div class="feature-icon"><iconify-icon icon="lucide:calendar-check-2"></iconify-icon></div><h3>Attendance Report</h3><p>Client consistency and missed-session breakdown.</p><button class="btn btn-secondary btn-sm" style="margin-top:18px" data-demo-action="Attendance report generated"><iconify-icon icon="lucide:file-chart-column"></iconify-icon>Generate</button></article><article class="card hover"><div class="feature-icon"><iconify-icon icon="lucide:hand-coins"></iconify-icon></div><h3>Monthly Coaching</h3><p>Sessions, completion rates, and coaching fees.</p><button class="btn btn-secondary btn-sm" style="margin-top:18px" data-demo-action="Monthly coaching report generated"><iconify-icon icon="lucide:file-chart-column"></iconify-icon>Generate</button></article><article class="card hover"><div class="feature-icon"><iconify-icon icon="lucide:user-round-x"></iconify-icon></div><h3>Inactive Members</h3><p>Members requiring coaching follow-up.</p><button class="btn btn-secondary btn-sm" style="margin-top:18px" data-demo-action="Inactive member report generated"><iconify-icon icon="lucide:file-chart-column"></iconify-icon>Generate</button></article></div>
+          <div class="card-grid reports-grid">
+            <article class="card report-card">
+              <div class="report-card-head"><span class="report-card-icon"><iconify-icon icon="lucide:chart-no-axes-combined"></iconify-icon></span><span class="badge neutral">Progress</span></div>
+              <div class="report-card-copy"><h3>Member Progress</h3><p>Review each member’s weight, body measurements, and completed workouts in one summary.</p></div>
+              <div class="report-card-includes"><span>Includes</span><strong>Measurements · Workout completion</strong></div>
+              <button class="btn btn-secondary btn-sm" data-demo-action="Member progress report generated"><iconify-icon icon="lucide:file-chart-column"></iconify-icon>Generate report</button>
+            </article>
+            <article class="card report-card">
+              <div class="report-card-head"><span class="report-card-icon"><iconify-icon icon="lucide:calendar-check-2"></iconify-icon></span><span class="badge neutral">Attendance</span></div>
+              <div class="report-card-copy"><h3>Attendance Report</h3><p>See client consistency clearly, including attended and missed coaching sessions.</p></div>
+              <div class="report-card-includes"><span>Includes</span><strong>Attendance · Missed sessions</strong></div>
+              <button class="btn btn-secondary btn-sm" data-demo-action="Attendance report generated"><iconify-icon icon="lucide:file-chart-column"></iconify-icon>Generate report</button>
+            </article>
+            <article class="card report-card">
+              <div class="report-card-head"><span class="report-card-icon"><iconify-icon icon="lucide:hand-coins"></iconify-icon></span><span class="badge neutral">Monthly</span></div>
+              <div class="report-card-copy"><h3>Monthly Coaching</h3><p>Summarize delivered sessions, plan completion rates, and coaching fees by month.</p></div>
+              <div class="report-card-includes"><span>Includes</span><strong>Sessions · Completion · Fees</strong></div>
+              <button class="btn btn-secondary btn-sm" data-demo-action="Monthly coaching report generated"><iconify-icon icon="lucide:file-chart-column"></iconify-icon>Generate report</button>
+            </article>
+            <article class="card report-card">
+              <div class="report-card-head"><span class="report-card-icon"><iconify-icon icon="lucide:user-round-x"></iconify-icon></span><span class="badge neutral">Follow-up</span></div>
+              <div class="report-card-copy"><h3>Inactive Members</h3><p>Identify members who have stopped attending and may need coaching follow-up.</p></div>
+              <div class="report-card-includes"><span>Includes</span><strong>Last attendance · Member status</strong></div>
+              <button class="btn btn-secondary btn-sm" data-demo-action="Inactive member report generated"><iconify-icon icon="lucide:file-chart-column"></iconify-icon>Generate report</button>
+            </article>
+          </div>
         </section>
 
         <section class="tab-panel" data-panel="notifications">
