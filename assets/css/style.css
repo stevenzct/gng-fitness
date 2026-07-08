@@ -2035,7 +2035,11 @@ body { overflow-wrap: break-word; }
   max-width: 680px;
   font-size: clamp(55px, 6.4vw, 94px);
 }
-
+.auth-login-page .auth-brand-copy h1,
+.auth-signup-page .auth-brand-copy h1 {
+  max-width: 680px;
+  font-size: clamp(55px, 6.4vw, 80px);
+}
 .auth-brand-copy .lead { color: #deded7; }
 .auth-brand > .small { color: #bdbdb5; }
 .auth-points span { border-color: rgba(255,255,255,.16); background: rgba(24,24,22,.62); }
@@ -2486,7 +2490,9 @@ body { overflow-wrap: break-word; }
 
 @media (max-width: 680px) {
   .auth-brand { min-height: 300px; padding-bottom: 74px; }
-  .auth-brand-copy h1 { font-size: clamp(43px, 13vw, 60px); }
+  .auth-brand-copy h1,
+  .auth-login-page .auth-brand-copy h1,
+  .auth-signup-page .auth-brand-copy h1 { font-size: clamp(43px, 13vw, 60px); }
   .auth-box { border-radius: 18px; padding: 22px 18px; }
   .role-page { padding-top: 10px; }
   .role-top { margin-bottom: 42px; }
